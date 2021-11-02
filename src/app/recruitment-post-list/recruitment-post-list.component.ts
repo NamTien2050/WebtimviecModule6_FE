@@ -13,6 +13,7 @@ import {DialogComponent} from "../dialog/dialog.component";
 })
 export class RecruitmentPostListComponent implements OnInit  {
 
+  lock: any;
   displayedColumns: string[] = ['id', 'title', 'quantity', 'position','experience', 'date', 'delete', 'active'];
   dataSource: any;
   recruitmentPost: RecruitmentPost[]=[];
@@ -48,7 +49,12 @@ export class RecruitmentPostListComponent implements OnInit  {
   }
 
   unlockPost(id: number) {
+      this.lock='Bài đăng đang mở'
 
+  }
+
+  lockPost(id: number) {
+      this.lock='Bài đăng đang đóng'
   }
 }
 

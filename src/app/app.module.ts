@@ -31,6 +31,8 @@ import {CreateRecruitmentPostComponent} from "./create-recruitment-post/create-r
 import {RecruitmentPostListComponent} from "./recruitment-post-list/recruitment-post-list.component";
 import {DialogComponent} from "./dialog/dialog.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -67,7 +69,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatSelectModule,
     MatRadioModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
