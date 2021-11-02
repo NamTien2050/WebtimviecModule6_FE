@@ -1,0 +1,92 @@
+
+
+<div class="container">
+  <div class="row; margin: auto;
+  width: 50%;">
+    <div class="col-12" style="margin-top: 20px ; margin: auto;
+  width: 50%">
+      <mat-card style="margin: 50px 0">
+        <h1>Tạo tin tuyển dụng mới:</h1>
+        <form class="create-category" #f="ngForm" (ngSubmit)="f.form.valid &&ngSubmit()" novalidate>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Title:</mat-label>
+            <input matInput name="title" [(ngModel)]="form.title" #title="ngModel" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Lương :</mat-label>
+            <input matInput name="minSalary" [(ngModel)]="form.minSalary" #minSalary="ngModel" >
+            <input matInput name="author" [(ngModel)]="form.maxSalary" #maxSalary="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Số lương tuyển :</mat-label>
+            <input matInput name="description" [(ngModel)]="form.quantity" #quantity="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Giới tính:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.gender" #gender="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Kỹ năng:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.skill" #skill="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Hình thức làm việc:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.workType" #workType="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Vị Trí:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.position" #position="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Kinh nhiệm :</mat-label>
+            <input matInput name="description" [(ngModel)]="form.experience" #experience="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Thời hạn nộp đơn :</mat-label>
+            <input matInput name="description" [(ngModel)]="form.date" #date="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Lĩnh vực:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.field" #field="ngModel" >
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Địa điểm:</mat-label>
+            <input matInput name="description" [(ngModel)]="form.location" #location="ngModel" >
+          </mat-form-field>
+          <br>
+
+          <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Tạo tin
+          </button>
+          <button routerLink="/book-list" mat-stroked-button color="accent"
+                  class="mat-button-toggle-group btn-outline-primary">Back
+          </button>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+id: any;
+title: any;
+minSalary: any;
+maxSalary: any;
+quantity: any;
+gender: any;
+skill: any;
+workType: any;
+position: any;
+experience:any;
+date: any;
+field: any;
+location: any;
+status: any;
