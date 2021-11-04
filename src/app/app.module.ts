@@ -76,6 +76,7 @@ import { DetailRecruitmentPostComponent } from './detail-recruitment-post/detail
     MatNativeDateModule,
 
 
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
