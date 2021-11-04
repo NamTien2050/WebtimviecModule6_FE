@@ -12,8 +12,9 @@ export class RecruitmentPost {
   date: any;
   field: any;
   location: any;
-  description: any
+  description: any;
   status: any;
+  employer_id: any;
 
   // constructor(title: string, quantity: number, position: string, experience: string, date: any, status: any) {
   //   this.title = title;
@@ -25,7 +26,7 @@ export class RecruitmentPost {
   // }
 
 
-  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any, status: any) {
+  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any, status: any, employer_id: any) {
     this.title = title;
     this.minSalary = minSalary;
     this.maxSalary = maxSalary;
@@ -40,5 +41,6 @@ export class RecruitmentPost {
     this.location = location;
     this.description = description;
     this.status = status;
+    this.employer_id = employer_id;
   }
 }

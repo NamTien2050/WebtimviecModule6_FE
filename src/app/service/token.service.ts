@@ -32,5 +32,8 @@ export class TokenService {
     window.sessionStorage.removeItem(ID_KEY)
     window.sessionStorage.setItem(ID_KEY,id)
   }
+  public getID(){
+    return window.sessionStorage.getItem(ID_KEY)
+  }
 
 }

@@ -33,6 +33,7 @@ import {DialogComponent} from "./dialog/dialog.component";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { DetailRecruitmentPostComponent } from './detail-recruitment-post/detail-recruitment-post.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     CreateRecruitmentPostComponent,
     RecruitmentPostListComponent,
     DialogComponent,
+    DetailRecruitmentPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
 
   ],
   providers: [httpInterceptorProviders],

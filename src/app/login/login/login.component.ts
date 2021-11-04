@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.username);
         this.tokenService.setRole(data.role);
-        this.tokenService.setId(data.id);
+        this.tokenService.setId(data.user_id);
         this.router.navigate(['register']).then(()=>{
           window.location.reload();
         })

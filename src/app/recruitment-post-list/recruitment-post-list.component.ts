@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {RecruitmentPost} from "../model/RecruitmentPost";
 import {EmployerService} from "../service/employer.service";
 import {DialogComponent} from "../dialog/dialog.component";
+import {TokenService} from "../service/token.service";
 
 @Component({
   selector: 'app-recruitment-post-list',
@@ -13,18 +14,21 @@ import {DialogComponent} from "../dialog/dialog.component";
 })
 export class RecruitmentPostListComponent implements OnInit  {
 
-  lock: any;
-  displayedColumns: string[] = ['id', 'title', 'quantity', 'position','experience', 'date', 'delete', 'active'];
+  displayedColumns: string[] = ['id', 'title', 'quantity', 'position','experience', 'date', 'delete', 'status'];
   dataSource: any;
   recruitmentPost: RecruitmentPost[]=[];
+  isStatus = false;
+  idDetail?:number;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   constructor(private employerService: EmployerService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,private tokenService: TokenService ) { }
   ngOnInit(): void {
-    this.getRecruitmentPostList();
+    this.getRecruitmentPostList()
   }
   getRecruitmentPostList(){
-    this.employerService.getRecruitmentPostList().subscribe(recruitmentPost =>{
+    const id = this.tokenService.getID();
+    // @ts-ignore
+    this.employerService.getRecruitmentPostList(id).subscribe(recruitmentPost =>{
       this.recruitmentPost = recruitmentPost;
       console.log('list = > ', this.recruitmentPost);
       this.dataSource = new MatTableDataSource<RecruitmentPost>(this.recruitmentPost);
@@ -35,6 +39,7 @@ export class RecruitmentPostListComponent implements OnInit  {
     this.employerService.deleteRecruitmentPost(id).subscribe(() =>{
       // window.location.reload();
       this.getRecruitmentPostList();
+
     })
   }
   openDialog(id:number) {
@@ -49,13 +54,23 @@ export class RecruitmentPostListComponent implements OnInit  {
   }
 
   unlockPost(id: number) {
-      this.lock='Bài đăng đang mở'
+this.employerService.detailRecruitmentPost(id).subscribe(oneStatus =>{
+  this.isStatus = oneStatus.status;
+})
+      this.isStatus = !this.isStatus;
+      this.employerService.checkLockPost(id, this.isStatus).subscribe(data =>{
+        this.getRecruitmentPostList()
 
+      })
   }
 
   lockPost(id: number) {
-      this.lock='Bài đăng đang đóng'
+    this.employerService.checkLockPost(id, this.isStatus).subscribe(data =>{
+      console.log('data ==> ', data)
+      this.getRecruitmentPostList()
+    })
   }
+
 }
 
 

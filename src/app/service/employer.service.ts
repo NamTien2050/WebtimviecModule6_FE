@@ -13,24 +13,29 @@ export class EmployerService {
   constructor(private http: HttpClient) {
   }
 
-  getRecruitmentPostList():Observable<RecruitmentPost[]>{
-    return this.http.get<RecruitmentPost[]>(this.RECRUITMENT_API)
+  getRecruitmentPostList(id: number):Observable<RecruitmentPost[]>{
+    return this.http.get<RecruitmentPost[]>(this.RECRUITMENT_API+'/list/'+id)
   }
 
   createRecruitmentPost(recruitmentPost: RecruitmentPost): Observable<RecruitmentPost>{
     return this.http.post<RecruitmentPost>(this.RECRUITMENT_API, recruitmentPost);
   }
 
+
   deleteRecruitmentPost(id: number): Observable<RecruitmentPost>{
     return this.http.delete<RecruitmentPost>(this.RECRUITMENT_API+'/'+id);
   }
-  //
+
   // updateStudent(id: number, student: Students) : Observable<Students>{
   //   return this.http.put<Students>(this.STUDENT_API+'/'+id, student)
   // }
-  //
-  // detailStudent(id: number): Observable<Students>{
-  //   return this.http.get<Students>(this.STUDENT_API+'/'+id);
-  //   // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
-  // }
+
+  detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
+    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/'+id);
+    // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
+  }
+  checkLockPost(id:number, status: any): Observable<RecruitmentPost>{
+
+    return this.http.put<RecruitmentPost>(this.RECRUITMENT_API+'/updateStatus/'+id, status)
+  }
 }

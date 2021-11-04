@@ -55,7 +55,8 @@ export class CreateRecruitmentPostComponent implements OnInit {
       this.form.field,
       this.form.location,
       this.form.description,
-      this.form.status = true
+      this.form.status = true,
+      this.form.employer_id
     )
 
     this.employerService.createRecruitmentPost(this.recruitmentPost).subscribe(data => {
