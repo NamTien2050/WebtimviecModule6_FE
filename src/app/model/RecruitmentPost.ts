@@ -14,19 +14,9 @@ export class RecruitmentPost {
   location: any;
   description: any;
   status: any;
-  employer_id: any;
+  appUser: any;
 
-  // constructor(title: string, quantity: number, position: string, experience: string, date: any, status: any) {
-  //   this.title = title;
-  //   this.quantity = quantity;
-  //   this.position = position;
-  //   this.experience = experience;
-  //   this.date = date;
-  //   this.status = status;
-  // }
-
-
-  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any, status: any, employer_id: any) {
+  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any, status: any, appUser: any) {
     this.title = title;
     this.minSalary = minSalary;
     this.maxSalary = maxSalary;
@@ -41,6 +31,6 @@ export class RecruitmentPost {
     this.location = location;
     this.description = description;
     this.status = status;
-    this.employer_id = employer_id;
+    this.appUser = appUser;
   }
 }

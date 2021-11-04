@@ -38,4 +38,6 @@ export class EmployerService {
 
     return this.http.put<RecruitmentPost>(this.RECRUITMENT_API+'/updateStatus/'+id, status)
   }
+
+
 }

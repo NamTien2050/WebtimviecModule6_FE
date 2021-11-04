@@ -59,6 +59,7 @@ this.employerService.detailRecruitmentPost(id).subscribe(oneStatus =>{
 })
       this.isStatus = !this.isStatus;
       this.employerService.checkLockPost(id, this.isStatus).subscribe(data =>{
+        console.log('dât====',data)
         this.getRecruitmentPostList()
 
       })

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RecruitmentPost} from "../model/RecruitmentPost";
 import {EmployerService} from "../service/employer.service";
 import {FormControl, Validators} from "@angular/forms";
+import {TokenService} from "../service/token.service";
 
 @Component({
   selector: 'app-create-recruitment-post',
@@ -33,14 +34,19 @@ export class CreateRecruitmentPostComponent implements OnInit {
     {value: 'Both', viewValue: 'Không phân biệt'},
   ]
 
-  constructor(private employerService: EmployerService) {
+
+  user_id: any;
+
+  constructor(private employerService: EmployerService,
+              private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
-
+    this.user_id = this.tokenService.getID()
   }
 
   ngSubmit() {
+
     this.recruitmentPost = new RecruitmentPost(
       this.form.title,
       this.form.minSalary,
@@ -56,26 +62,26 @@ export class CreateRecruitmentPostComponent implements OnInit {
       this.form.location,
       this.form.description,
       this.form.status = true,
-      this.form.employer_id
+      this.form.appUser={id: this.user_id},
     )
-
+    console.log(this.form.user_id)
     this.employerService.createRecruitmentPost(this.recruitmentPost).subscribe(data => {
-        if(JSON.stringify(data)==JSON.stringify(this.success)){
-          this.form.title = '',
-            this.form.minSalary = '',
-            this.form.maxSalary = '',
-            this.form.quantity = '',
-            this.form.gender = '',
-            this.form.skill = '',
-            this.form.workType = '',
-            this.form.position = '',
-            this.form.experience = '',
-            this.form.date = '',
-            this.form.field = '',
-            this.form.location = '',
-            this.form.description = ''
-          this.check = true;
-        }
+      if (JSON.stringify(data) == JSON.stringify(this.success)) {
+        this.form.title = '',
+          this.form.minSalary = '',
+          this.form.maxSalary = '',
+          this.form.quantity = '',
+          this.form.gender = '',
+          this.form.skill = '',
+          this.form.workType = '',
+          this.form.position = '',
+          this.form.experience = '',
+          this.form.date = '',
+          this.form.field = '',
+          this.form.location = '',
+          this.form.description = ''
+        this.check = true;
+      }
 
     })
   }
