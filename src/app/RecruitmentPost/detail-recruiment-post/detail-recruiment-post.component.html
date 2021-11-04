@@ -1,0 +1,44 @@
+<div class="container" *ngIf="recruitmentPost">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px">
+      <mat-card style="margin: 50px 0">
+          <h1>{{recruitmentPost.title}}</h1>
+          <label>Lương: </label>
+          <p>{{recruitmentPost.minSalary}}</p> đến <p>{{recruitmentPost.maxSalary}}</p>
+          <br>
+          <label>Số lượng:</label>
+          <p>{{recruitmentPost.quantity}}</p>
+          <br>
+          <label>Giới tính:</label>
+          <p>{{recruitmentPost.gender}}</p>
+          <br>
+          <label>Kỹ năng:</label>
+          <p>{{recruitmentPost.skill}}</p>
+          <br>
+          <label>Hình thức làm việc:</label>
+          <p>{{recruitmentPost.workType}}</p>
+          <br>
+          <label>Vị trí:</label>
+          <p>{{recruitmentPost.position}}</p>
+          <br>
+          <label>Kinh nghiệm:</label>
+          <p>{{recruitmentPost.experience}}</p>
+          <br>
+          <label>Mô tả công việc:</label>
+          <p>{{recruitmentPost.description}}</p>
+          <br>
+          <label>Ngày hệt hạn nộp đơn:</label>
+          <p>{{recruitmentPost.date}}</p>
+          <br>
+          <label>Lĩnh vực:</label>
+          <p>{{recruitmentPost.field}}</p>
+          <br>
+          <label>Địa điểm:</label>
+          <p>{{recruitmentPost.location}}</p>
+          <br>
+
+        <button *ngIf="status" (click)="Recruitment(recruitmentPost.id)" mat-raised-button  style="background-color: green">Ứng tuyển ngay</button>
+      </mat-card>
+    </div>
+  </div>
+</div>

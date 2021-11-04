@@ -1,4 +1,5 @@
 export interface Employment {
+  id : number,
   name : string;
   image :string;
   image1 :string;
@@ -11,5 +12,6 @@ export interface Employment {
   address :string;
   facebookLink :string;
   field : string;
+  status : boolean;
 
 }

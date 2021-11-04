@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {EmployerService} from "../../service/employer.service";
 import {TokenService} from "../../service/token.service";
 import {UserProfile} from "../../model/user-profile";
+import {MatPaginator} from "@angular/material/paginator";
+import {ActivatedRoute, ParamMap} from "@angular/router";
+import {MatTableDataSource} from "@angular/material/table";
+import {RecruitmentPost} from "../../model/RecruitmentPost";
 
 @Component({
   selector: 'app-job-apply',
@@ -9,21 +13,32 @@ import {UserProfile} from "../../model/user-profile";
   styleUrls: ['./job-apply.component.scss']
 })
 export class JobApplyComponent implements OnInit {
-  UserProfile?: UserProfile[]= [];
+  displayedColumns: string[] = ['id', 'name', 'age', 'gender', 'level', 'field', 'pick'];
+  dataSource: any;
+  UserProfile?: UserProfile[] = [];
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
 
-  constructor(private employerService: EmployerService,private tokenService: TokenService) { }
+  constructor(private employerService: EmployerService, private tokenService: TokenService, private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.getUserProfile()
   }
-  getUserProfile(){
-    const id = this.tokenService.getId()
-    // @ts-ignore
-    this.employerService.getUserProfileOfEmployment(id).subscribe(data => {
-      console.log(data)
+
+  getUserProfile() {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      // @ts-ignore
+      this.employerService.getUserProfileOfEmployment(paramMap.get('id')).subscribe(data=>{
+        this.UserProfile = data;
+        // @ts-ignore
+        this.dataSource = new MatTableDataSource<RecruitmentPost>(this.UserProfile);
+        this.dataSource.paginator = this.paginator;
+      })
+
+
 
     })
 
-  }
 
+  }
 }

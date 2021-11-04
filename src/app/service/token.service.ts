@@ -28,9 +28,16 @@ export class TokenService {
     window.sessionStorage.removeItem(ROLE_KEY)
     window.sessionStorage.setItem(ROLE_KEY,role)
   }
+  public getRole(){
+    return window.sessionStorage.getItem(ROLE_KEY);
+
+  }
   public setId(id : any){
     window.sessionStorage.removeItem(ID_KEY)
     window.sessionStorage.setItem(ID_KEY,id)
+  }
+  public getId(){
+    return window.sessionStorage.getItem(ID_KEY);
   }
 
 }
