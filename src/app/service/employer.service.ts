@@ -12,7 +12,6 @@ export class EmployerService {
   private RECRUITMENT_API = environment.LOCAL_API + 'employers/recruitmentPosts';
   constructor(private http: HttpClient) {
   }
-
   getRecruitmentPostList(id: number):Observable<RecruitmentPost[]>{
     return this.http.get<RecruitmentPost[]>(this.RECRUITMENT_API+'/list/'+id)
   }
@@ -39,5 +38,7 @@ export class EmployerService {
     return this.http.put<RecruitmentPost>(this.RECRUITMENT_API+'/updateStatus/'+id, status)
   }
 
+  getUserProfileOfEmployment(id:number): Observable<any> {
+    return this.http.get<any>(this.RECRUITMENT_API + "/UserProfileofEmployment/"+id)}
 
 }

@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px">
+      <h1 style="margin-left: 470px;margin-top: 10px">Sửa hồ sơ</h1>
+      <h4 style="margin-left: 450px;margin-top: 10px;color:green">{{status}}</h4>
+      <mat-card style="margin: 50px 0">
+        <form class="example-form" [formGroup]="formUserProfile" (ngSubmit)="submit()">
+          <input type="hidden" formControlName="id"/>
+          <div class="Test2">
+            <div class="Test">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="text" formControlName="name" matInput [formControl]="name" [errorStateMatcher]="matcher"
+                >
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <!--    <mat-error *ngIf="emailFormControl1.hasError('minlength') && !emailFormControl1.hasError('maxlength')">-->
+                <!--      Please enter a letter 6-8-->
+                <!--    </mat-error>-->
+                <mat-error *ngIf="name.hasError('required')">
+                  Name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Address</mat-label>
+                <input type="text" formControlName="address" matInput  [formControl]="address" [errorStateMatcher]="matcher">
+
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Trình độ</mat-label>
+                <mat-select formControlName="level" required>
+                  <mat-option value="Đại học">Đại học</mat-option>
+                  <mat-option value="Cao đẳng">Cao đẳng</mat-option>
+                  <mat-option value="Trung cấp">Trung cấp</mat-option>
+                  <mat-option value="Tự do">Tự do</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-radio-group style="margin-left: 100px" formControlName="gender" aria-label="Select an option">
+                <mat-radio-button value="Nam">Nam</mat-radio-button>
+                <mat-radio-button value="Nữ">Nữ</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="Test">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input type="number" formControlName="phone" matInput [formControl]="address" [errorStateMatcher]="matcher"
+                >
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Age</mat-label>
+                <input type="number" formControlName="age" matInput [formControl]="address" [errorStateMatcher]="matcher"
+                >
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Mức lương mong muốn </mat-label>
+                <input type="text" formControlName="desiredSalary" matInput  [formControl]="address" [errorStateMatcher]="matcher">
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Châm ngôn sống </mat-label>
+                <input type="text" formControlName="motto" matInput  [formControl]="address" [errorStateMatcher]="matcher">
+              </mat-form-field>
+            </div>
+            <div class="Test" style="margin-left: 130px">
+              <mat-form-field style="margin-left: 1px" class="example-full-width" appearance="fill">
+                <mat-label>Lĩnh vực</mat-label>
+                <mat-select formControlName="field" required>
+                  <mat-option value="IT">IT</mat-option>
+                  <mat-option value="Tài chính">Tài chính</mat-option>
+                  <mat-option value="Ngân hàng">Ngân hàng</mat-option>
+                  <mat-option value="Kinh doanh">Kinh doanh</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <h2>Description</h2>
+              <textarea style="width:300px" formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
+              <input type="hidden"  formControlName="image" value="{{value}}">
+              <h2>Avatar</h2>
+              <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
+              <input type="hidden"  formControlName="image1" value="{{value1}}">
+              <h2 style="margin-top: 15px">Ảnh bìa</h2>
+              <app-upload-avatar (giveURLtoCreate)="onChangeAvatar1($event)"></app-upload-avatar>
+            </div>
+          </div>
+          <button style="margin-left: 380px" mat-raised-button color="primary">Đăng kí</button>
+        </form>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
+

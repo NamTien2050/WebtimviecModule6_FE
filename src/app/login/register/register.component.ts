@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 import {SignUpForm} from "../../model/SingUpForm";
+import {TokenService} from "../../service/token.service";
 
 @Component({
   selector: 'app-register',
@@ -27,10 +28,11 @@ export class RegisterComponent implements OnInit {
   success: any = {
     message: "yes"
   }
-  constructor(private authService: AuthService,
+  constructor(private authService: AuthService, private tokenService: TokenService,
               private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.tokenService.getID())
   }
   register(){
     this.signUpForm = new SignUpForm(
