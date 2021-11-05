@@ -1,37 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="UserProfile">Hồ sơ cá nhân</a>
+    <a class="navbar-brand" *ngIf="roleUser" routerLink="UserProfile">Hồ sơ cá nhân</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="createUserProfile">Cập nhập hồ sơ cá nhân</a>
+          <a class="nav-link active" *ngIf="roleUser"  aria-current="page" routerLink="createUserProfile">Cập nhập hồ sơ cá nhân</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="listEmploymentUnauthenticated">Hồ sơ chờ duyệt</a>
+          <a class="nav-link active" *ngIf="roleAdmin" aria-current="page" routerLink="listEmploymentUnauthenticated">Hồ sơ chờ duyệt</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="EmploymentDetail">Hồ sơ công ty</a>
+          <a class="nav-link active" *ngIf="roleEmployment" aria-current="page" routerLink="EmploymentDetail">Hồ sơ công ty</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="!checkLogin" routerLink="register">Đăng kí</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="EmploymentAuthentication">Ds công ty HĐ</a>
+          <a class="nav-link" *ngIf="roleAdmin"  routerLink="EmploymentAuthentication">Ds công ty HĐ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="CreatePost">Tạo bài Post</a>
+          <a class="nav-link"   *ngIf="roleEmployment" routerLink="CreatePost">Tạo bài Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="PostOfEmployment">PostofMe</a>
+          <a class="nav-link"  *ngIf="roleEmployment" routerLink="PostOfEmployment">PostofMe</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  routerLink="AllPost">DS POST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="register">Ds tài khoản</a>
+          <a class="nav-link"  *ngIf="roleAdmin"  routerLink="allUser">Ds tài khoản</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" *ngIf="!checkLogin" routerLink="login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,10 +45,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="formEmployment">Tạo hồ sơ công ty</a>
+          <a class="nav-link" *ngIf="roleEmployment"  routerLink="formEmployment">Tạo hồ sơ công ty</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="login">Đăng xuất</a>
+          <a class="nav-link" *ngIf="checkLogin" routerLink="login">Đăng xuất</a>
         </li>
       </ul>
       <a routerLink="recruitmentPostList">Danh sách bài đăng</a>

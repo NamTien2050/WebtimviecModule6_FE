@@ -46,6 +46,7 @@ import { DetailRecruimentPostComponent } from './RecruitmentPost/detail-recruime
 import { AllListPostComponent } from './RecruitmentPost/all-list-post/all-list-post.component';
 import { JobApplyComponent } from './Employment/job-apply/job-apply.component';
 import { DetailProfileComponent } from './Employment/detail-profile/detail-profile.component';
+import { ListUserComponent } from './Admin/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,9 @@ import { DetailProfileComponent } from './Employment/detail-profile/detail-profi
     AllListPostComponent,
     JobApplyComponent,
     DetailProfileComponent,
-    RecruitmentPostListComponent
+    RecruitmentPostListComponent,
+    ListUserComponent,
+
   ],
   imports: [
     BrowserModule,

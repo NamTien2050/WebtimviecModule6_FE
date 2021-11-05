@@ -56,6 +56,8 @@ export class AuthService {
   return this.http.get<any>(API_URL + "/rest/EmploymentByUser/"+id)}
   getUserProfileOfEmployment(id:number): Observable<any> {
     return this.http.get<any>(API_URL + "//EmploymentByUser/"+id)}
+  showAllUser():Observable<any> {
+    return this.http.get<any>(API_URL + "/admin/showAllUser/")}
 
   setData(data:any){
     this.data = data;

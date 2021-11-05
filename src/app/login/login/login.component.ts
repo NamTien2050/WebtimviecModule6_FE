@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.setName(data.username);
         this.tokenService.setRole(data.role);
         this.tokenService.setId(data.user_id);
-        this.router.navigate(['register']).then(()=>{
+        this.router.navigate(['AllPost']).then(()=>{
           window.location.reload();
         })
       }

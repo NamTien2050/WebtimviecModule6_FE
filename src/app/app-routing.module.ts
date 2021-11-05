@@ -22,6 +22,9 @@ import {AllListPostComponent} from "./RecruitmentPost/all-list-post/all-list-pos
 import {JobApplyComponent} from "./Employment/job-apply/job-apply.component";
 import {DetailProfileComponent} from "./Employment/detail-profile/detail-profile.component";
 import {DetailRecruitmentPostComponent} from "./detail-recruitment-post/detail-recruitment-post.component";
+import {NavbarComponent} from "./navbar/navbar.component";
+import {ListUserComponent} from "./Admin/list-user/list-user.component";
+
 
 
 const routes: Routes = [
@@ -44,7 +47,9 @@ const routes: Routes = [
   {path:'detail-recruitmentPost/:id', component: DetailRecruimentPostComponent},
   {path:'AllPost', component: AllListPostComponent},
   {path:'UserProfile/List/:id', component :JobApplyComponent},
-  {path:'detail-userProfile/:id',component: DetailProfileComponent}
+  {path:'detail-userProfile/:id',component: DetailProfileComponent},
+  {path:'navbar',component :NavbarComponent},
+  {path:'allUser',component : ListUserComponent}
 ];
 
 @NgModule({
