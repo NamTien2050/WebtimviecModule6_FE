@@ -46,6 +46,7 @@ import { AllListPostComponent } from './RecruitmentPost/all-list-post/all-list-p
 import { JobApplyComponent } from './Employment/job-apply/job-apply.component';
 import { DetailProfileComponent } from './Employment/detail-profile/detail-profile.component';
 import { ListUserComponent } from './Admin/list-user/list-user.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ListUserComponent } from './Admin/list-user/list-user.component';
     AllListPostComponent,
     JobApplyComponent,
     DetailProfileComponent,
-    ListUserComponent
+    ListUserComponent,
+    HomeComponent
 
   ],
     imports: [

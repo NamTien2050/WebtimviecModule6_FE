@@ -29,7 +29,7 @@ export class EmployerService {
   // }
 
   detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
-    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/'+id);
+    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/list/'+id);
     // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
   }
   checkLockPost(id:number, status: any): Observable<RecruitmentPost>{
