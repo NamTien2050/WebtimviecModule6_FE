@@ -10,6 +10,9 @@ import {TokenService} from "../service/token.service";
 })
 export class NavbarComponent implements OnInit {
   checkLogin = false;
+  roleUser = false;
+  roleAdmin = false;
+  roleEmployment = false;
 
   constructor(private tokenService : TokenService, private router: Router,
               private auth : AuthService) { }
@@ -17,6 +20,15 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.checkLogin = true;
+    }
+    if(this.tokenService.getRole()=='ROLE_USER') {
+      this.roleUser = true;
+    }
+    if(this.tokenService.getRole()=='ROLE_ADMIN'){
+      this.roleAdmin = true;
+    }
+    if(this.tokenService.getRole()=='ROLE_EMPLOYMENT'){
+      this.roleEmployment = true;
     }
   }
 
