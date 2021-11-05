@@ -28,14 +28,14 @@
         </li>
       </ul>
       <a routerLink="recruitmentPostList">Danh sách bài đăng</a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" [formGroup]="formGroupFind" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="findField"/>
+        <a routerLink="findByPost"><button class="btn btn-outline-success" type="submit"(click)="findAllByFieldContaining()">Search</button></a>
       </form>
     </div>
   </div>
 </nav>
 
-<h1>hahahaah</h1>
+<!--<h1>hahahaah</h1>-->
 
 

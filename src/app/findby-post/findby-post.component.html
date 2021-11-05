@@ -1,0 +1,86 @@
+<h1 style="align-content: center">Danh sách tin tuyển dụng </h1>
+
+<form class="d-flex" [formGroup]="formGroupFind">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="findField"/>
+  <a routerLink="findByPost">
+    <button class="btn btn-outline-success" type="submit" (click)="findAllByFieldContaining()">Search</button>
+  </a>
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px ;">
+      <mat-card style="margin: 50px 0">
+        <div class="mat-elevation-z8">
+          <table>
+            <tr *ngFor="let f of field">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell> ID</th>
+                <td mat-cell>{{f.id}}</td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="title">
+                <th mat-header-cell> Tiêu đề</th>
+                <td mat-cell>{{f.title}}</td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="quantity">
+                <th mat-header-cell> Số lượng tuyển</th>
+                <td mat-cell>{{f.quantity}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="position">
+                <th mat-header-cell> Vị trí</th>
+                <td mat-cell>{{f.location}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="experience">
+                <th mat-header-cell> Kinh nghiệm</th>
+                <td mat-cell>{{f.experience}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="date">
+                <th mat-header-cell> Ngày hết hạn</th>
+                <td mat-cell>{{f.date}}</td>
+              </ng-container>
+
+
+              <!--            <ng-container matColumnDef="delete">-->
+              <!--              <th mat-header-cell *matHeaderCellDef> Xóa </th>-->
+              <!--              <td mat-cell *matCellDef="let element">-->
+              <!--                <button (click)="openDialog(element.id)"  mat-icon-button color="primary" aria-label="Example icon button with a home icon">-->
+              <!--                  <mat-icon color="warn">delete</mat-icon>-->
+              <!--                </button>-->
+              <!--              </td>-->
+              <!--            </ng-container>-->
+
+              <!--            <ng-container matColumnDef="status">-->
+              <!--              <th mat-header-cell *matHeaderCellDef> Mở/Khóa bài đăng </th>-->
+              <!--              <td mat-cell *matCellDef="let element">-->
+              <!--                <button *ngIf="element.status"  mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="lockPost(element.id)">-->
+              <!--                  <mat-icon color="primary">lock_open</mat-icon>-->
+              <!--                </button>-->
+              <!--                <button *ngIf="!element.status" mat-icon-button color="primary"  (click)="unlockPost(element.id)" aria-label="Example icon button with a home icon">-->
+              <!--                  <mat-icon color="warn">lock</mat-icon>-->
+              <!--                </button>-->
+              <!--              </td>-->
+              <!--            </ng-container>-->
+
+              <!--            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+              <!--            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+            </tr>
+
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[1,2,3]"
+                         showFirstLastButtons
+                         aria-label="Select page of periodic elements">
+          </mat-paginator>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

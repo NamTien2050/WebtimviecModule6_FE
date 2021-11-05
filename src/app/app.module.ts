@@ -34,6 +34,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { DetailRecruitmentPostComponent } from './detail-recruitment-post/detail-recruitment-post.component';
+import { FindByPostComponent } from './findby-post/findby-post.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { DetailRecruitmentPostComponent } from './detail-recruitment-post/detail
     RecruitmentPostListComponent,
     DialogComponent,
     DetailRecruitmentPostComponent,
+    FindByPostComponent,
   ],
   imports: [
     BrowserModule,
