@@ -13,6 +13,7 @@ import {SignUpForm} from "../../model/SingUpForm";
 export class EmploymentDetailComponent implements OnInit {
   User?: SignUpForm;
   Employment ?: Employment;
+  status = false;
 
   constructor(private authService: AuthService,private tokenService: TokenService) { }
 
@@ -32,6 +33,10 @@ export class EmploymentDetailComponent implements OnInit {
   }
   getUserById(){
     const id = this.tokenService.getId()
+    const role = this.tokenService.getRole();
+    if(role != "ROLE_EMPLOYMENT"){
+      this.status = true;
+    }
     // @ts-ignore
     this.authService.getUserbyUserId(id).subscribe(data => {
       this.User = data;

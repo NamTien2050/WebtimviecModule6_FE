@@ -43,6 +43,12 @@ export class HomeComponent implements OnInit {
         }
       });
     })
+    $('.catelog-list').readmore({
+      speed: 75,
+      maxHeight: 150,
+      moreLink: '<a href="#">Xem thêm<i class="fa fa-angle-down pl-2"></i></a>',
+      lessLink: '<a href="#">Rút gọn<i class="fa fa-angle-up pl-2"></i></a>'
+    });
   }
 
 }
