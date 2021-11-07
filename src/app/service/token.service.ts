@@ -17,6 +17,7 @@ export class TokenService {
   public getToken(): any{
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
+
   public setName(name: string){
     window.sessionStorage.removeItem(NAME_KEY);
     window.sessionStorage.setItem(NAME_KEY, name);
@@ -30,7 +31,6 @@ export class TokenService {
   }
   public getRole(){
     return window.sessionStorage.getItem(ROLE_KEY);
-
   }
   public setId(id : any){
     window.sessionStorage.removeItem(ID_KEY)

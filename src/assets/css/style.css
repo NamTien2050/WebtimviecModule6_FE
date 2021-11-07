@@ -2755,9 +2755,19 @@ p.output-file {
 
 .recuitment-card .btn1 {
     background-color: #f79159;
+<<<<<<< HEAD
     box-shadow: 0 6px darken(#f79159, 10%);
     transition: none;
 }
+=======
+    transition: none;
+}
+
+.recuitment-card .btn1 {
+    box-shadow: 0 6px darken(#f79159, 10%);
+}
+
+>>>>>>> e7050ad35fe6727860d98107f76b4810e1729d4c
 /*(end) EMPLOYEE*/
 
 /*Recuitment nav*/
@@ -2771,4 +2781,8 @@ ul.navbar-nav.nav-recuitment-li li a {
     font-size: 15px;
 }
 
+<<<<<<< HEAD
 /*(end)Recuitment nav*/
+=======
+/*(end)Recuitment nav*/
+>>>>>>> e7050ad35fe6727860d98107f76b4810e1729d4c

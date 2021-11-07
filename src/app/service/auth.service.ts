@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {SignUpForm} from "../model/SingUpForm";
 import {JWTToken} from "../model/jwttoken";
 import {SignInForm} from "../model/SignInForm";
+import {RecruitmentPost} from "../model/RecruitmentPost";
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
   }
-  register(signUp: SignUpForm): Observable<any> {
-    return this.http.post<any>(API_URL + '/rest/register',signUp);
+  register(AppUser:any, id:number): Observable<any> {
+    return this.http.post<any>(API_URL + '/rest/register/'+id,AppUser);
   }
-  login(signIn : SignInForm): Observable<JWTToken> {
-    return this.http.post<JWTToken>(API_URL + '/rest/login', signIn);
+  login(AppUser: any): Observable<JWTToken> {
+    return this.http.post<JWTToken>(API_URL + '/rest/login', AppUser);
   }
   createEmployment(Employment: any,id_user:number): Observable<any> {
     return this.http.post<any>(API_URL + "/rest/createEmployment/"+id_user, Employment)
@@ -58,6 +59,12 @@ export class AuthService {
     return this.http.get<any>(API_URL + "//EmploymentByUser/"+id)}
   showAllUser():Observable<any> {
     return this.http.get<any>(API_URL + "/admin/showAllUser/")}
+  deleteUser(id_user :number) : Observable<any> {
+    return this.http.get<any>(API_URL + "/admin/deleteById/"+id_user);
+  }
+  detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
+    return this.http.get<RecruitmentPost>(API_URL + "/rest/list/"+id);
+  }
 
   setData(data:any){
     this.data = data;

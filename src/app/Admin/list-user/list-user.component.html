@@ -24,9 +24,9 @@
             </ng-container>
 
             <ng-container matColumnDef="lock">
-              <th mat-header-cell *matHeaderCellDef> Mở/Khóa Tài khoản </th>
+              <th mat-header-cell *matHeaderCellDef> Mở/Khóa User </th>
               <td mat-cell *matCellDef="let element">
-                <button *ngIf="element.status"  mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                <button *ngIf="element.status"  mat-icon-button color="primary" aria-label="Example icon button with a home icon" >
                   <mat-icon color="primary">lock_open</mat-icon>
                 </button>
               </td>
@@ -34,7 +34,7 @@
             <ng-container matColumnDef="delete">
               <th mat-header-cell *matHeaderCellDef> Delete </th>
               <td mat-cell *matCellDef="let element">
-                <button   mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                <button (click)="openDialog(element.id)"  mat-icon-button color="primary" aria-label="Example icon button with a home icon">
                   <mat-icon color="warn">delete</mat-icon>
                 </button>
               </td>

@@ -25,9 +25,8 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
 
-
-
 const routes: Routes = [
+  {path: '',component: HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'recruitmentPostList', component: RecruitmentPostListComponent},

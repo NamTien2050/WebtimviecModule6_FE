@@ -1,33 +1,88 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12" style="margin-top: 20px">
-      <mat-card style="margin: 50px 0">
-        <form class="form-login" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
-          <mat-error *ngIf="checkRegister" class="alert alert-primary">Create Acount Succsee! Please login</mat-error>
-          <mat-error *ngIf="checkLoginFailed" class="alert alert-danger">{{status}}</mat-error>
-          <!-- USERNAME -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Username: </mat-label>
-            <input name="username" [(ngModel)]="form.username" matInput placeholder="Placeholder" #username="ngModel" minlength="3" maxlength="100" required>
-            <mat-icon color="accent" matSuffix>person_outline</mat-icon>
-            <mat-error *ngIf="username.hasError('required')">The name is required!</mat-error>
-            <mat-error *ngIf="username.hasError('minlength')">The name must more than 3 character</mat-error>
-          </mat-form-field><br>
-          <!--PASSWORD -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Enter your password</mat-label>
-            <input name="password" [(ngModel)]="form.password" matInput [type]="hide ? 'password' : 'text'" #password="ngModel" required minlength="6" maxlength="100">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon color="accent">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error *ngIf="password.hasError('required')">The password is required!</mat-error>
-            <mat-error *ngIf="password.hasError('minlength')">The password must more than 6 character</mat-error>
-          </mat-form-field><br>
-          <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Login
-            <mat-icon color="accent" matSuffix>login</mat-icon>
-          </button>
-        </form>
-      </mat-card>
-    </div>
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-12" style="margin-top: 20px">-->
+<!--      <mat-card style="margin: 50px 0">-->
+<!--        <form class="form-login" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>-->
+<!--          <mat-error *ngIf="checkRegister" class="alert alert-primary">Create Acount Succsee! Please login</mat-error>-->
+<!--          <mat-error *ngIf="checkLoginFailed" class="alert alert-danger">{{status}}</mat-error>-->
+<!--          &lt;!&ndash; USERNAME &ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Username: </mat-label>-->
+<!--            <input name="username" [(ngModel)]="form.username" matInput placeholder="Placeholder" #username="ngModel" minlength="3" maxlength="100" required>-->
+<!--            <mat-icon color="accent" matSuffix>person_outline</mat-icon>-->
+<!--            <mat-error *ngIf="username.hasError('required')">The name is required!</mat-error>-->
+<!--            <mat-error *ngIf="username.hasError('minlength')">The name must more than 3 character</mat-error>-->
+<!--          </mat-form-field><br>-->
+<!--          &lt;!&ndash;PASSWORD &ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Enter your password</mat-label>-->
+<!--            <input name="password" [(ngModel)]="form.password" matInput [type]="hide ? 'password' : 'text'" #password="ngModel" required minlength="6" maxlength="100">-->
+<!--            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+<!--              <mat-icon color="accent">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--            </button>-->
+<!--            <mat-error *ngIf="password.hasError('required')">The password is required!</mat-error>-->
+<!--            <mat-error *ngIf="password.hasError('minlength')">The password must more than 6 character</mat-error>-->
+<!--          </mat-form-field><br>-->
+<!--          <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Login-->
+<!--            <mat-icon color="accent" matSuffix>login</mat-icon>-->
+<!--          </button>-->
+<!--        </form>-->
+<!--      </mat-card>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container-fluid login-fluid clear-left clear-right" >
+  <div class="login-container">
+
+
+    <div class="clearfix"></div>
+
+    <div class="padding-top-90"></div>
+
+    <!-- login main -->
+    <div class="login-main">
+      <div class="w-login m-auto">
+        <div class="row">
+          <!-- login main descriptions -->
+          <div class="col-md-6 col-sm-12 col-12 login-main-left">
+            <img src="assets/img/banner-login.png">
+          </div>
+          <!-- login main form -->
+          <div class="col-md-6 col-sm-12 col-12 login-main-right">
+
+            <form class="login-form" [formGroup]="userForm"  (ngSubmit)="ngSubmit()">
+              <div class="login-main-header">
+                <h3>Đăng Nhập</h3>
+                <p style="color: red">{{status}}</p>
+              </div>
+              <div class="input-div one">
+                <label>Username</label>
+                <div class="div lg-lable">
+                  <input formControlName="username"   type="text" class="input form-control-lgin">
+                </div>
+              </div>
+              <div class="input-div pass">
+                <label>Password</label>
+                <div class="div lg-lable">
+                  <input formControlName="password"  type="password" class="input form-control-lgin">
+              </div>
+              <div class="form-group d-block frm-text">
+                <a href="#" class="fg-login d-inline-block">Quên mật khẩu</a>
+                <a href="#" class="fg-login float-right d-inline-block">Bạn chưa có tài khoản? Đăng ký</a>
+              </div>
+              <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Nhập</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+   </div>
+    <!-- (end) login main -->
   </div>
 </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+

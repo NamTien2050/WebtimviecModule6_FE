@@ -1,48 +1,81 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12" style="margin-top: 20px">
-      <mat-card style="margin: 50px 0">
-        <form class="form-register" #f="ngForm"  (ngSubmit)="f.form.valid&&register()" novalidate>
-          <mat-error class="alert alert-primary">{{status}}</mat-error>
-          <!-- NAME -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Name: </mat-label>
-            <input name="name" [(ngModel)]="form.name"  matInput placeholder="Placeholder" #name="ngModel" minlength="3" maxlength="100" required>
-            <mat-icon color="accent" matSuffix>person_outline</mat-icon>
-            <mat-error *ngIf="name.hasError('required')">The name is required!</mat-error>
-            <mat-error *ngIf="name.hasError('minlength')">The name must more than 3 character</mat-error>
-          </mat-form-field><br>
-          <!-- USERNAME -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Username: </mat-label>
-            <input name="username" [(ngModel)]="form.username" matInput placeholder="Placeholder" #username="ngModel" minlength="3" maxlength="100" required>
-            <mat-icon color="accent" matSuffix>person_outline</mat-icon>
-            <mat-error *ngIf="username.hasError('required')">The name is required!</mat-error>
-            <mat-error *ngIf="username.hasError('minlength')">The name must more than 3 character</mat-error>
-          </mat-form-field><br>
-          <!-- EMAIL -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Email: </mat-label>
-            <input name="email" [(ngModel)]="form.email" matInput placeholder="Placeholder" [formControl]="emailFormControl" required>
-            <mat-icon color="accent" matSuffix>email</mat-icon>
-            <mat-error *ngIf="emailFormControl.hasError('required')">The name is required!</mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('email')">The email is invalid! Ex: chinhcomhut@gmail.com</mat-error>
-          </mat-form-field><br>
-          <!--PASSWORD -->
-          <mat-form-field style="width: 350px" appearance="outline">
-            <mat-label>Enter your password</mat-label>
-            <input name="password" [(ngModel)]="form.password" matInput [type]="hide ? 'password' : 'text'" #password="ngModel" required minlength="6" maxlength="100">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon color="accent">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error *ngIf="password.hasError('required')">The password is required!</mat-error>
-            <mat-error *ngIf="password.hasError('minlength')">The password must more than 6 character</mat-error>
-          </mat-form-field><br>
-          <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Register
-            <mat-icon color="accent" matSuffix>add_circle_outline</mat-icon>
-          </button>
-        </form>
-      </mat-card>
+
+<div class="container-fluid login-fluid clear-left clear-right">
+  <div class="login-container">
+    <!-- login header -->r
     </div>
+    <!-- (end) login header -->
+
+          <div class="clearfix"></div>
+
+          <div class="padding-top-90"></div>
+
+          <!-- login main -->
+          <div class="login-main">
+            <div class="w-login m-auto">
+              <div class="row">
+                <!-- login main desciptions -->
+          <div class="col-md-6 col-sm-12 col-12 login-main-left">
+            <img src="assets/img/banner-login.png">
+          </div>
+          <!-- login main form -->
+
+          <div class="col-md-6 col-sm-12 col-12 login-main-right">
+            <div class="row" style="padding-top: 10px" >
+              <div class="col-sm-6 col-12 pr-7">
+                <button (click)="NTV()" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
+                  <span>Người tìm việc</span>
+                </button>
+              </div>
+              <div class="col-sm-6 col-12 pl-7">
+                <button (click)="DN()" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
+                  <span>Doanh nghiệp</span>
+                </button>
+              </div>
+            </div>
+
+            <form class="login-form reg-form" [formGroup]="userForm"  (ngSubmit)="register()" >
+              <div class="login-main-header">
+                <span id="status" style="color: red" class="alert alert-primary">{{status}}</span>
+                <h3>Đăng Ký</h3>
+              </div>
+              <div class="input-div one">
+                <label>Name</label>
+                <div class="div lg-lable">
+                  <input formControlName="name" type="text" class="input form-control-lgin">
+                </div>
+              </div>
+              <div class="input-div one">
+                <label>Username</label>
+                <div class="div lg-lable">
+                  <input formControlName="username" [formControl]="usernameFormControl" type="text" class="input form-control-lgin">
+                </div>
+              </div>
+              <div class="input-div one">
+                <label>Email</label>
+                <div class="div lg-lable">
+                  <input formControlName="email" [formControl]="emailFormControl" type="text" class="input form-control-lgin">
+                  <p *ngIf="emailFormControl.hasError('required')"></p>
+                </div>
+              </div>
+              <div class="input-div one">
+                <label>Password</label>
+                <div class="div lg-lable">
+                  <input  formControlName="password" type="password" class="input form-control-lgin">
+                </div>
+              </div>
+              <div class="form-group d-block frm-text">
+                <a href="#" class="fg-login d-inline-block"></a>
+                <a href="#" class="fg-login float-right d-inline-block">Bạn đã có tài khoản? Đăng Nhập</a>
+              </div>
+              <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký</button>
+              <div class="form-group d-block w-100 mt-5">
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- (end) login main -->
   </div>
-</div>
+

@@ -32,8 +32,11 @@ export class EmployerService {
   //   return this.http.put<Students>(this.STUDENT_API+'/'+id, student)
   // }
 
-  detailRecruitmentPost(id: number): Observable<RecruitmentPost> {
-    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API + '/' + id);
+  // detailRecruitmentPost(id: number): Observable<RecruitmentPost> {
+  //   return this.http.get<RecruitmentPost>(this.RECRUITMENT_API + '/' + id);
+  // }
+  detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
+    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/list/'+id);
     // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
   }
 

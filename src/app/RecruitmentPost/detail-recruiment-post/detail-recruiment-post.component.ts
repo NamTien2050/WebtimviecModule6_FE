@@ -48,7 +48,7 @@ export class DetailRecruimentPostComponent implements OnInit {
     this.atRouter.paramMap.subscribe(ctgId => {
       const id = Number(ctgId.get('id'));
       console.log(id)
-      this.employerService.detailRecruitmentPost(id).subscribe(res => {
+      this.authService.detailRecruitmentPost(id).subscribe(res => {
         this.recruitmentPost = res;
         console.log(this.recruitmentPost)
 

@@ -14,24 +14,34 @@ export class NavbarComponent implements OnInit {
   roleAdmin = false;
   roleEmployment = false;
 
-  constructor(private tokenService : TokenService, private router: Router,
-              private auth : AuthService) { }
+  constructor(private tokenService: TokenService, private router: Router,
+              private auth: AuthService) {
+  }
 
   ngOnInit(): void {
+    console.log(this.tokenService.getRole())
     if (this.tokenService.getToken()) {
       this.checkLogin = true;
     }
-    if(this.tokenService.getRole()=='ROLE_USER') {
+    if (this.tokenService.getRole() == 'ROLE_USER') {
       this.roleUser = true;
     }
-    if(this.tokenService.getRole()=='ROLE_ADMIN'){
+    if (this.tokenService.getRole() == 'ROLE_ADMIN') {
       this.roleAdmin = true;
     }
-    if(this.tokenService.getRole()=='ROLE_EMPLOYMENT'){
+    if (this.tokenService.getRole() == 'ROLE_ADMIN') {
       this.roleEmployment = true;
     }
+
+
+  }
+  removeLogin(){
+    this.roleUser = false;
+    this.roleAdmin = false;
+    this.roleEmployment = false;
+    this.checkLogin = false;
   }
 
 
-
 }
+
