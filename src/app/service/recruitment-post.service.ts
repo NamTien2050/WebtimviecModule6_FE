@@ -8,11 +8,12 @@ import {RecruitmentPost} from "../model/RecruitmentPost";
   providedIn: 'root'
 })
 export class RecruitmentPostService {
-
+  RecruitmentPost: RecruitmentPost[]=[];
   constructor(private http: HttpClient) {
   }
 
   findAllByFieldContaining(field: string) {
     return this.http.get(`${environment.apiUrl}/post/fields/` + field)
   }
+
 }
