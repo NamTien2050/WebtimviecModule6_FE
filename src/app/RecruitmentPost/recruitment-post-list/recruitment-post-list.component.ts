@@ -1,19 +1,20 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {RecruitmentPost} from "../../model/RecruitmentPost";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
-import {EmployerService} from "../../service/employer.service";
 import {MatDialog} from "@angular/material/dialog";
+import {RecruitmentPost} from "../../model/RecruitmentPost";
+import {EmployerService} from "../../service/employer.service";
 import {TokenService} from "../../service/token.service";
 import {DialogComponent} from "../../Admin/dialog/dialog.component";
-import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-recruitment-post-list',
   templateUrl: './recruitment-post-list.component.html',
   styleUrls: ['./recruitment-post-list.component.scss']
 })
-export class RecruitmentPostListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'title', 'quantity', 'position','experience', 'date', 'delete', 'status','listUserProfile'];
+export class RecruitmentPostListComponent implements OnInit  {
+
+  displayedColumns: string[] = ['id', 'title', 'quantity', 'position','experience', 'date', 'delete', 'status'];
   dataSource: any;
   recruitmentPost: RecruitmentPost[]=[];
   isStatus = false;
@@ -53,15 +54,15 @@ export class RecruitmentPostListComponent implements OnInit {
   }
 
   unlockPost(id: number) {
-    this.employerService.detailRecruitmentPost(id).subscribe(oneStatus =>{
-      this.isStatus = oneStatus.status;
-    })
-    this.isStatus = !this.isStatus;
-    this.employerService.checkLockPost(id, this.isStatus).subscribe(data =>{
-      console.log('dât====',data)
-      this.getRecruitmentPostList()
+this.employerService.detailRecruitmentPost(id).subscribe(oneStatus =>{
+  this.isStatus = oneStatus.status;
+})
+      this.isStatus = !this.isStatus;
+      this.employerService.checkLockPost(id, this.isStatus).subscribe(data =>{
+        console.log('dât====',data)
+        this.getRecruitmentPostList()
 
-    })
+      })
   }
 
   lockPost(id: number) {
@@ -70,4 +71,9 @@ export class RecruitmentPostListComponent implements OnInit {
       this.getRecruitmentPostList()
     })
   }
+
 }
+
+
+
+

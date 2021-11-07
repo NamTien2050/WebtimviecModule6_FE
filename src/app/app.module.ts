@@ -58,7 +58,6 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     CreateRecruitmentPostComponent,
     RecruitmentPostListComponent,
-    DialogComponent,
     DetailRecruitmentPostComponent,
     EmploymentDetailComponent,
     FormDetailComponent,
@@ -66,7 +65,6 @@ import { HomeComponent } from './home/home.component';
     UserProfileComponent,
     EditUserProfileComponent,
     ListEmploymentUnauthenticatedComponent,
-    DialogComponent,
     EditEmploymentComponent,
     ListEmploymentAuthenticatedComponent,
     CreateRecruitmentPostComponent,
@@ -78,6 +76,7 @@ import { HomeComponent } from './home/home.component';
     RecruitmentPostListComponent,
     ListUserComponent,
     HomeComponent,
+    DialogComponent
 
   ],
   imports: [

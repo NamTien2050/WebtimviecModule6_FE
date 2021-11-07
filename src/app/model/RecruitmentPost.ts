@@ -13,10 +13,11 @@ export class RecruitmentPost {
   field: any;
   location: any;
   description: any;
+  expectation: any
   status: any;
   appUser: any;
 
-  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any, status: any, appUser: any) {
+  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any,expectation:any, status: any, appUser: any) {
     this.title = title;
     this.minSalary = minSalary;
     this.maxSalary = maxSalary;
@@ -30,6 +31,7 @@ export class RecruitmentPost {
     this.field = field;
     this.location = location;
     this.description = description;
+    this.expectation = expectation;
     this.status = status;
     this.appUser = appUser;
   }

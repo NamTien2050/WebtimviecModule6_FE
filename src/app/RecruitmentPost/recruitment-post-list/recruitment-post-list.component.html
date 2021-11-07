@@ -1,4 +1,5 @@
 
+
 <h1 style="align-content: center">Danh sách tin tuyển dụng </h1>
 
 <button class="create-btn" mat-raised-button color="primary" [routerLink]="'/createRecruitmentPost'">Thêm tin tuyển dụng mới</button>
@@ -63,13 +64,6 @@
                 <button *ngIf="!element.status" mat-icon-button color="primary"  (click)="unlockPost(element.id)" aria-label="Example icon button with a home icon">
                   <mat-icon color="warn">lock</mat-icon>
                 </button>
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="listUserProfile">
-              <th mat-header-cell *matHeaderCellDef> Danh sách ứng tuyển </th>
-              <td mat-cell *matCellDef="let element">
-              <a [routerLink]="['/UserProfile/List',element.id]"><button type="button" class="btn btn-success">Views</button> </a>
               </td>
             </ng-container>
 

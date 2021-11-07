@@ -21,7 +21,6 @@ import {DetailRecruimentPostComponent} from "./RecruitmentPost/detail-recruiment
 import {AllListPostComponent} from "./RecruitmentPost/all-list-post/all-list-post.component";
 import {JobApplyComponent} from "./Employment/job-apply/job-apply.component";
 import {DetailProfileComponent} from "./Employment/detail-profile/detail-profile.component";
-import {DetailRecruitmentPostComponent} from "./detail-recruitment-post/detail-recruitment-post.component";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
@@ -33,7 +32,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'recruitmentPostList', component: RecruitmentPostListComponent},
   {path:'createRecruitmentPost', component: CreateRecruitmentPostComponent},
-  {path:'detail-recruitmentPost/:id', component: DetailRecruitmentPostComponent},
+  {path:'detail-recruitmentPost/:id', component: DetailRecruimentPostComponent},
   {path:'formEmployment',component: FormDetailComponent},
   {path:'createUserProfile',component: FormUserProfileComponent},
   {path:'UserProfile',component: UserProfileComponent},
