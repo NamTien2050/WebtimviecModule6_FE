@@ -52,6 +52,11 @@ export class EmployerService {
   getEmployerDetailByAppUser_Id(id: number): Observable<any> {
     return this.http.get<any>(this.GENERAL_API + "/EmploymentByUser/" + id)
   }
+
+  pageRecruitmentPost(nextPage: any){
+    const params = nextPage;
+    return this.http.get(this.GENERAL_API+"/recruitmentPostPage", {params}) // {params} thuoc ve ham get cua angular
+  }
 }
 
 

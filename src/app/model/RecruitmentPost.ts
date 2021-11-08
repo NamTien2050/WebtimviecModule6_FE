@@ -1,6 +1,8 @@
 export class RecruitmentPost {
   id: any;
   title: any;
+  nameEmployer: any;
+  logo: any;
   minSalary: any;
   maxSalary: any;
   quantity: any;
@@ -8,7 +10,7 @@ export class RecruitmentPost {
   skill: any;
   workType: any;
   position: any;
-  experience:any;
+  experience: any;
   date: any;
   field: any;
   location: any;
@@ -17,8 +19,10 @@ export class RecruitmentPost {
   status: any;
   appUser: any;
 
-  constructor(title: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description:any,expectation:any, status: any, appUser: any) {
+  constructor(title: any, nameEmployer: any, logo: any, minSalary: any, maxSalary: any, quantity: any, gender: any, skill: any, workType: any, position: any, experience: any, date: any, field: any, location: any, description: any, expectation: any, status: any, appUser: any) {
     this.title = title;
+    this.nameEmployer = nameEmployer;
+    this.logo = logo;
     this.minSalary = minSalary;
     this.maxSalary = maxSalary;
     this.quantity = quantity;

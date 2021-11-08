@@ -59,10 +59,10 @@
               <th mat-header-cell *matHeaderCellDef> Mở/Khóa bài đăng </th>
               <td mat-cell *matCellDef="let element">
                 <button *ngIf="element.status"  mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="lockPost(element.id)">
-                  <mat-icon color="primary">lock_open</mat-icon>
+                  <i class="fas fa-lock-open"></i>
                 </button>
                 <button *ngIf="!element.status" mat-icon-button color="primary"  (click)="unlockPost(element.id)" aria-label="Example icon button with a home icon">
-                  <mat-icon color="warn">lock</mat-icon>
+                  <i class="fas fa-lock"></i>
                 </button>
               </td>
             </ng-container>

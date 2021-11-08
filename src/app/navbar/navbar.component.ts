@@ -36,10 +36,12 @@ export class NavbarComponent implements OnInit {
 
   }
   removeLogin(){
-    this.roleUser = false;
-    this.roleAdmin = false;
-    this.roleEmployment = false;
-    this.checkLogin = false;
+    // this.roleUser = false;
+    // this.roleAdmin = false;
+    // this.roleEmployment = false;
+    // this.checkLogin = false;
+    window.sessionStorage.clear();
+    window.location.reload();
   }
 
 

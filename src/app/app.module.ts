@@ -48,6 +48,7 @@ import { JobApplyComponent } from './Employment/job-apply/job-apply.component';
 import { DetailProfileComponent } from './Employment/detail-profile/detail-profile.component';
 import { ListUserComponent } from './Admin/list-user/list-user.component';
 import { HomeComponent } from './home/home.component';
+import { JobBoardComponent } from './RecruitmentPost/job-board/job-board.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { HomeComponent } from './home/home.component';
     RecruitmentPostListComponent,
     ListUserComponent,
     HomeComponent,
-    DialogComponent
+    DialogComponent,
+    JobBoardComponent
 
   ],
   imports: [

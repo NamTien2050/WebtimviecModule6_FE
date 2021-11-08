@@ -60,6 +60,8 @@ export class CreateRecruitmentPostComponent implements OnInit {
 
     this.recruitmentPost = new RecruitmentPost(
       this.form.title,
+      this.form.nameEmployer,
+      this.form.logo,
       this.form.minSalary,
       this.form.maxSalary,
       this.form.quantity,
