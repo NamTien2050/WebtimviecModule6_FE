@@ -13,22 +13,36 @@ import {HttpClient} from "@angular/common/http";
 })
 export class NavbarComponent implements OnInit {
   checkLogin = false;
+  roleUser = false;
+  roleAdmin = false;
+  roleEmployment = false;
   field: any;
   formGroupFind!: FormGroup;
 
   constructor(private tokenService: TokenService, private router: Router,
               private auth: AuthService,
-              private RecruitmentPostService: RecruitmentPostService,
-              http: HttpClient) {
+              private RecruitmentPostService: RecruitmentPostService,) {
   }
 
   ngOnInit(): void {
+    console.log(this.tokenService.getRole())
     if (this.tokenService.getToken()) {
       this.checkLogin = true;
     }
+
     this.formGroupFind = new FormGroup({
       findField: new FormControl("")
     })
+
+    if (this.tokenService.getRole() == 'ROLE_USER') {
+      this.roleUser = true;
+    }
+    if (this.tokenService.getRole() == 'ROLE_ADMIN') {
+      this.roleAdmin = true;
+    }
+    if (this.tokenService.getRole() == 'ROLE_ADMIN') {
+      this.roleEmployment = true;
+    }
   }
 
   findField: string = '';
@@ -39,4 +53,14 @@ export class NavbarComponent implements OnInit {
       console.log(this.field);
     });
   }
+
+  removeLogin() {
+    this.roleUser = false;
+    this.roleAdmin = false;
+    this.roleEmployment = false;
+    this.checkLogin = false;
+  }
+
+
 }
+

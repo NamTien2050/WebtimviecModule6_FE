@@ -3,6 +3,7 @@ import {SignInForm} from "../../model/SignInForm";
 import {AuthService} from "../../service/auth.service";
 import {TokenService} from "../../service/token.service";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,13 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   status : any;
-  hide = true;
-  form: any = {};
-  error1: any = {
-    message: "Wrong email or password or not verification"
-  }
-  signInForm?: SignInForm;
+  userForm : FormGroup = new FormGroup(
+    {
+      username : new FormControl(),
+      password : new FormControl(),
+    }
+  )
+
   checkRegister = false;
   checkLoginFailed = false;
   constructor(  private authService: AuthService,
@@ -29,17 +31,14 @@ export class LoginComponent implements OnInit {
     }
   }
   ngSubmit(){
-    this.signInForm = new SignInForm(
-      this.form.username,
-      this.form.password
-    )
-    this.authService.login(this.signInForm).subscribe(data =>{
+    const AppUser = this.userForm.value;
+    this.authService.login(AppUser).subscribe(data =>{
       if(data.token!=undefined){
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.username);
         this.tokenService.setRole(data.role);
         this.tokenService.setId(data.user_id);
-        this.router.navigate(['register']).then(()=>{
+        this.router.navigate(['home']).then(()=>{
           window.location.reload();
         })
       }

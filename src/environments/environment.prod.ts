@@ -9,7 +9,6 @@ export const environment = {
     measurementId: "G-SVL6TCW94C"
   },
   production: true,
-
   // LOCAL API
   LOCAL_API : 'http://localhost:8080/',
 };

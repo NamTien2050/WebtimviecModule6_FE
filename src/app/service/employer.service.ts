@@ -8,11 +8,9 @@ import {RecruitmentPost} from "../model/RecruitmentPost";
   providedIn: 'root'
 })
 export class EmployerService {
-  // LOCAL API :
   private RECRUITMENT_API = environment.LOCAL_API + 'employers/recruitmentPosts';
-  constructor(private http: HttpClient) {
-  }
 
+  constructor(private http: HttpClient) { }
   getRecruitmentPostList(id: number):Observable<RecruitmentPost[]>{
     return this.http.get<RecruitmentPost[]>(this.RECRUITMENT_API+'/list/'+id)
   }
@@ -31,7 +29,8 @@ export class EmployerService {
   // }
 
   detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
-    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/'+id);
+
+    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/list/'+id);
     // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
   }
   checkLockPost(id:number, status: any): Observable<RecruitmentPost>{
@@ -39,5 +38,7 @@ export class EmployerService {
     return this.http.put<RecruitmentPost>(this.RECRUITMENT_API+'/updateStatus/'+id, status)
   }
 
+  getUserProfileOfEmployment(id:number): Observable<any> {
+    return this.http.get<any>(this.RECRUITMENT_API + "/UserProfileofEmployment/"+id)}
 
 }
