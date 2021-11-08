@@ -47,7 +47,6 @@ import {JobApplyComponent} from './Employment/job-apply/job-apply.component';
 import {DetailProfileComponent} from './Employment/detail-profile/detail-profile.component';
 import {ListUserComponent} from './Admin/list-user/list-user.component';
 import {HomeComponent} from './home/home.component';
-import {FindByPostComponent} from './findby-post/findby-post.component';
 import { SearchComponent } from './search/search.component';
 
 @NgModule({
@@ -74,7 +73,6 @@ import { SearchComponent } from './search/search.component';
     DetailProfileComponent,
     ListUserComponent,
     HomeComponent,
-    FindByPostComponent,
     SearchComponent,
   ],
 

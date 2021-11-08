@@ -19,7 +19,7 @@ import {DetailProfileComponent} from "./Employment/detail-profile/detail-profile
 import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
-import {FindByPostComponent} from "./findby-post/findby-post.component";
+import {SearchComponent} from "./search/search.component";
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -43,7 +43,7 @@ const routes: Routes = [
   {path:'navbar',component :NavbarComponent},
   {path:'allUser',component : ListUserComponent},
   {path:'home', component: HomeComponent},
-  {path: "findByPost", component: FindByPostComponent}
+  {path: "search", component: SearchComponent}
 
 ];
 
