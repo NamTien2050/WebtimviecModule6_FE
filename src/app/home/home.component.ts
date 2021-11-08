@@ -38,9 +38,9 @@ export class HomeComponent implements OnInit {
     }
 
     if (role == null) {
-      this.checkLogin1 = true;
+      this.checkLogin1 = false;
     } else {
-      this.checkLogin1 = false
+      this.checkLogin1 = true;
     }
     this.pageRecruitmentPost({page: 0, size: 3})
     $(document).ready(function () {

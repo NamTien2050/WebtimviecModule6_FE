@@ -23,6 +23,7 @@ export class EmploymentDetailComponent implements OnInit {
   }
   getEmploymentByUser(){
     const id = this.tokenService.getID();
+    console.log("check id ====",id)
     // @ts-ignore
     this.authService.getEmploymentByUser(id).subscribe(data => {
       if(data.status) {

@@ -51,9 +51,9 @@ export class DetailRecruimentPostComponent implements OnInit {
       this.authService.detailRecruitmentPost(id).subscribe(res => {
         this.recruitmentPost = res;
         console.log(this.recruitmentPost)
-
       });
-      this.employerService.getEmployerDetailByAppUser_Id(id).subscribe(a =>{
+
+      this.employerService.getEmployerDetailByAppUser_Id(Number(this.tokenService.getID())).subscribe(a =>{
         this.employment = a;
       })
     });
