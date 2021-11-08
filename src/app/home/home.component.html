@@ -205,8 +205,9 @@
                     </div>
                     <div class="job-salary">
                       <i class="fa fa-money" aria-hidden="true"></i>
-                      <span class="salary-min">{{a.maxSalary}}<em class="salary-unit">triệu</em></span>
-                      <span class="salary-max">{{a.minSalary}}<em class="salary-unit">triệu</em></span>
+                      <span *ngIf="checkLogin1" class="salary-min">{{a.maxSalary}}<em class="salary-unit">triệu</em></span>
+                      <span *ngIf="checkLogin1" class="salary-max">{{a.minSalary}}<em class="salary-unit">triệu</em></span>
+                      <span [routerLink]="['/login']" *ngIf="!checkLogin1" class="salary-max">Đăng nhập để nhìn thấy mức lương</span>
                     </div>
                     <div class="job-deadline">
                       <span><i class="fa fa-clock-o" aria-hidden="true"></i>  Hạn nộp: <strong>{{a.date}}</strong></span>

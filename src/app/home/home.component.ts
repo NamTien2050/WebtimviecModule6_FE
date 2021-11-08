@@ -20,12 +20,14 @@ export class HomeComponent implements OnInit {
   // arrEmployers: Array<Employment> = [];
   // recruitmentPost?: RecruitmentPost;
   checkLogin: any;
+  checkLogin1: any;
+
   constructor(private employerService: EmployerService,
               private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
-    const role= this.tokenService.getRole();
+    const role = this.tokenService.getRole();
     console.log("kiểm tra role=======", role)
     if (role == "ROLE_USER") {
       this.checkLogin = 1;
@@ -33,6 +35,12 @@ export class HomeComponent implements OnInit {
       this.checkLogin = 2;
     } else {
       this.checkLogin = 3
+    }
+
+    if (role == null) {
+      this.checkLogin1 = true;
+    } else {
+      this.checkLogin1 = false
     }
     this.pageRecruitmentPost({page: 0, size: 3})
     $(document).ready(function () {
