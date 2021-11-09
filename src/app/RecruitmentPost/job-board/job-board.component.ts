@@ -3,6 +3,7 @@ import {RecruitmentPost} from "../../model/RecruitmentPost";
 import {Employment} from "../../model/employment";
 import {EmployerService} from "../../service/employer.service";
 import {PageEvent} from "@angular/material/paginator";
+import {TokenService} from "../../service/token.service";
 
 @Component({
   selector: 'app-job-board',
@@ -17,9 +18,28 @@ export class JobBoardComponent implements OnInit {
   employers?: Employment[] = [];
   arrEmployers: Array<Employment> = [];
   recruitmentPost?: RecruitmentPost;
-  constructor(private employerService: EmployerService) {  }
+  checkLogin: any;
+  checkLogin1: any;
+
+  constructor(private employerService: EmployerService,
+              private tokenService: TokenService,) {  }
 
   ngOnInit(): void {
+    const role = this.tokenService.getRole();
+    console.log("kiểm tra role=======", role)
+    if (role == "ROLE_USER") {
+      this.checkLogin = 1;
+    } else if (role == "ROLE_EMPLOYMENT" || role == "ROLE_ADMIN") {
+      this.checkLogin = 2;
+    } else {
+      this.checkLogin = 3
+    }
+
+    if (role == null) {
+      this.checkLogin1 = false;
+    } else {
+      this.checkLogin1 = true;
+    }
     this.pageRecruitmentPost({page:0, size: 5})
   }
   pageRecruitmentPost(nextPage: { page?: number; size?: number; }){
