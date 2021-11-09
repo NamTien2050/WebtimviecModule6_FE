@@ -49,6 +49,9 @@ export class EditUserProfileComponent implements OnInit {
       const id = this.tokenService.getId()
       // @ts-ignore
       this.auth.getUserProfile(id).subscribe(data=>{
+        this.value = data.image;
+        this.value1 = data.image1;
+        console.log(data.image1)
         this.formUserProfile = new FormGroup({
           id : new FormControl(data.id),
           name : new FormControl(data.name),
@@ -61,6 +64,7 @@ export class EditUserProfileComponent implements OnInit {
           field : new FormControl(data.field),
           motto : new FormControl(data.motto),
           description : new FormControl(data.description),
+          logo : new FormControl(data.logo),
           image : new FormControl(data.image),
           image1 : new FormControl(data.image1),
         })

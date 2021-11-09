@@ -68,13 +68,13 @@
                   <mat-option value="Kinh doanh">Kinh doanh</mat-option>
                 </mat-select>
               </mat-form-field>
-              <h2>Description</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Description</h2>
               <textarea style="width:300px" formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
               <input type="hidden"  formControlName="image" value="{{value}}">
-              <h2>Avatar</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Avatar</h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
               <input type="hidden"  formControlName="image1" value="{{value1}}">
-              <h2 style="margin-top: 15px">Ảnh bìa</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Ảnh bìa</h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar1($event)"></app-upload-avatar>
             </div>
           </div>
