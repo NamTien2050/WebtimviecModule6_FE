@@ -3,6 +3,7 @@ import {environment} from "../../environments/environment.prod";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {RecruitmentPost} from "../model/RecruitmentPost";
+import {FieldList} from "../model/FieldList";
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +36,8 @@ export class EmployerService {
   // detailRecruitmentPost(id: number): Observable<RecruitmentPost> {
   //   return this.http.get<RecruitmentPost>(this.RECRUITMENT_API + '/' + id);
   // }
-  detailRecruitmentPost(id: number): Observable<RecruitmentPost>{
-    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API+'/list/'+id);
+  detailRecruitmentPost(id: number): Observable<RecruitmentPost> {
+    return this.http.get<RecruitmentPost>(this.RECRUITMENT_API + '/list/' + id);
     // return this.http.get<Category>(`${this.API_CATEGORY}/${id}`)
   }
 
@@ -53,10 +54,25 @@ export class EmployerService {
     return this.http.get<any>(this.GENERAL_API + "/EmploymentByUser/" + id)
   }
 
-  pageRecruitmentPost(nextPage: any){
+  pageRecruitmentPost(nextPage: any) {
     const params = nextPage;
-    return this.http.get(this.GENERAL_API+"/recruitmentPostPage", {params}) // {params} thuoc ve ham get cua angular
+    return this.http.get(this.GENERAL_API + "/recruitmentPostPage", {params}) // {params} thuoc ve ham get cua angular
+  }
+
+
+  getFieldList(): Observable<any> {
+    return this.http.get<any>(this.GENERAL_API +'/getFieldList')
+  }
+
+  pageRecruitmentPostByField(nextPage: any, field: any){
+    return this.http.get(this.GENERAL_API+'/getRecruitmentPostByField/'+field)
+  }
+  b : any;
+  setData(b: any){
+    this.b = b;
+  }
+  getData(): number{
+    return this.b;
   }
 }
-
 

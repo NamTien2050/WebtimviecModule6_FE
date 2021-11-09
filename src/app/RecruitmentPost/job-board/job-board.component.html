@@ -7,8 +7,8 @@
           <h2 class="widget-title">
             <span>Danh sách tin tuyển dụng</span>
           </h2>
-          <div class="job-group" >
-            <div class="job pagi" *ngFor="let a of recruitmentPosts" >
+          <div class="job-group">
+            <div class="job pagi" *ngFor="let a of recruitmentPosts">
               <div class="job-content">
                 <div class="job-logo">
                   <a [routerLink]="['/detail-recruitmentPost',a.id]">
@@ -20,23 +20,27 @@
                   <div class="job-title">
                     <a [routerLink]="['/detail-recruitmentPost',a.id]">{{a.title}}</a>
                   </div>
-                  <div class="job-company" >
-                    <a [routerLink]="['/EmploymentDetail']">{{a.nameEmployer}}</a> |<a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <div class="job-company">
+                    <a [routerLink]="['/EmploymentDetail']">{{a.nameEmployer}}</a> |<a href="#" class="job-address"><i
+                    class="fa fa-map-marker" aria-hidden="true"></i>
                     {{a.location}}</a>
                   </div>
 
                   <div class="job-inf">
                     <div class="job-main-skill">
-                      <i class="fa fa-code" aria-hidden="true"></i>  <a href="#">{{a.skill}}</a>
+                      <i class="fa fa-code" aria-hidden="true"></i> <a href="#">{{a.skill}}</a>
                     </div>
                     <div class="job-salary">
                       <i class="fa fa-money" aria-hidden="true"></i>
-                      <span *ngIf="checkLogin1" class="salary-min">{{a.maxSalary}}<em class="salary-unit">triệu</em></span>
-                      <span *ngIf="checkLogin1" class="salary-max">{{a.minSalary}}<em class="salary-unit">triệu</em></span>
+                      <span *ngIf="checkLogin1" class="salary-min">{{a.maxSalary}}<em
+                        class="salary-unit">triệu</em></span>
+                      <span *ngIf="checkLogin1" class="salary-max">{{a.minSalary}}<em
+                        class="salary-unit">triệu</em></span>
                       <span [routerLink]="['/login']" *ngIf="!checkLogin1" class="salary-max">Đăng nhập để nhìn thấy mức lương</span>
                     </div>
                     <div class="job-deadline">
-                      <span><i class="fa fa-clock-o" aria-hidden="true"></i>  Hạn nộp: <strong>{{a.date}}</strong></span>
+                      <span><i class="fa fa-clock-o"
+                               aria-hidden="true"></i>  Hạn nộp: <strong>{{a.date}}</strong></span>
                     </div>
                   </div>
                 </div>
@@ -64,109 +68,108 @@
       <div class="col-md-4 col-sm-12 col-12 clear-left">
         <div class="job-sidebar">
           <h2 class="widget-title">
-            <span>Ngành Nghề</span>
+            <span>Ngành nghề</span>
           </h2>
           <div class="catelog-list">
-            <ul>
+            <ul *ngFor="let element of fieldList; let a = index">
               <li>
-                <a href="#">
-                <span class="cate-img">
-                  <em>Lập trình viên</em>
-                </span>
-                  <span class="cate-count">(1100)</span>
+                <a [routerLink]="" (click)="findByJob(a)">
+                   <span class="cate-img">
+                     <em >{{element}}</em>
+                   </span>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>Nhân viên kiểm thử</em>
-                </span>
-                  <span class="cate-count">(230)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>Kỹ sư cầu nối</em>
-                </span>
-                  <span class="cate-count">(110)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>Designer</em>
-                </span>
-                  <span class="cate-count">(2300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>Product Manager</em>
-                </span>
-                  <span class="cate-count">(99)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="cate-img">
-                  <em>HR</em>
-                </span>
-                  <span class="cate-count">(300)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="readallstyle reads1">Xem tất cả</a>
-              </li>
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>{{jobList}}</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(230)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>lllll</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(110)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>Designer</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(2300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>Product Manager</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(99)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#">-->
+              <!--                  <span class="cate-img">-->
+              <!--                  <em>HR</em>-->
+              <!--                </span>-->
+              <!--                  <span class="cate-count">(300)</span>-->
+              <!--                </a>-->
+              <!--              </li>-->
+              <!--              <li>-->
+              <!--                <a href="#" class="readallstyle reads1">Xem tất cả</a>-->
+              <!--              </li>-->
 
             </ul>
           </div>

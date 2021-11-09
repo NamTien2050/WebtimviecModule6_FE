@@ -25,6 +25,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
 import {CheckGuard} from "./security/check.guard";
+import {SearchResultComponent} from "./search-result/search-result.component";
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -50,7 +51,8 @@ const routes: Routes = [
   {path:'detail-userProfile/:id',component: DetailProfileComponent},
   {path:'navbar',component :NavbarComponent},
   {path:'allUser',component : ListUserComponent},
-  {path:'home', component: HomeComponent}
+  {path:'home', component: HomeComponent},
+  {path: 'search', component: SearchResultComponent}
 ];
 
 @NgModule({

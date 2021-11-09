@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RecruitmentPost} from "../../model/RecruitmentPost";
 import {Employment} from "../../model/employment";
 import {EmployerService} from "../../service/employer.service";
 import {PageEvent} from "@angular/material/paginator";
 import {TokenService} from "../../service/token.service";
+import {FieldList} from "../../model/FieldList";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-job-board',
@@ -14,19 +16,21 @@ export class JobBoardComponent implements OnInit {
 
   employer?: Employment;
   totalElements: number = 0;
-  recruitmentPosts :RecruitmentPost[] = [];
+  recruitmentPosts: RecruitmentPost[] = [];
   employers?: Employment[] = [];
   arrEmployers: Array<Employment> = [];
   recruitmentPost?: RecruitmentPost;
   checkLogin: any;
   checkLogin1: any;
+  fieldList: FieldList[] =[];
 
   constructor(private employerService: EmployerService,
-              private tokenService: TokenService,) {  }
+              private tokenService: TokenService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     const role = this.tokenService.getRole();
-    console.log("kiểm tra role=======", role)
     if (role == "ROLE_USER") {
       this.checkLogin = 1;
     } else if (role == "ROLE_EMPLOYMENT" || role == "ROLE_ADMIN") {
@@ -40,29 +44,27 @@ export class JobBoardComponent implements OnInit {
     } else {
       this.checkLogin1 = true;
     }
-    this.pageRecruitmentPost({page:0, size: 5})
+    this.pageRecruitmentPost({page: 0, size: 5})
+
+  this.getFieldList()
   }
-  pageRecruitmentPost(nextPage: { page?: number; size?: number; }){
+  getFieldList(){
+    this.employerService.getFieldList().subscribe(fieldList=>{
+      this.fieldList= fieldList;
+      console.log("fieldList=====>", this.fieldList)
+    })
+  }
+  pageRecruitmentPost(nextPage: { page?: number; size?: number; }) {
     console.log('goi ham page')
-    this.employerService.pageRecruitmentPost(nextPage).subscribe(data =>{
-      console.log('data --> ',data);
+    this.employerService.pageRecruitmentPost(nextPage).subscribe(data => {
+      console.log('data --> ', data);
       // @ts-ignore
       this.recruitmentPosts = data['content']
-      // for (let i = 0; i < this.recruitmentPosts.length; i++) {
-      //  // @ts-ignore
-      // this.employerService.getEmployerDetailByAppUser_Id(this.recruitmentPosts[i].appUser.id).subscribe(result=>{
-      //   this.employer =result;
-      //
-      //   // @ts-ignore
-      //   this.arrEmployers.push(this.employer[i])
-      //   console.log('mang employers --> ', this.arrEmployers)
-      //   console.log("test lay du lieu",this.employer)
-      // })
-      // }
       // @ts-ignore
       this.totalElements = data['totalElements']
     })
   }
+
   nextPage(event: PageEvent) {
     console.log('event -->', event);
     const nextPage = {};
@@ -73,5 +75,17 @@ export class JobBoardComponent implements OnInit {
     // @ts-ignore
     console.log('request[size]', nextPage['size']);
     this.pageRecruitmentPost(nextPage);
+  }
+
+
+  findByJob(a: number) {
+      let b
+    for (let i = 0; i < this.fieldList.length; i++) {
+       b = this.fieldList[a]
+    }
+    // @ts-ignore
+    window.sessionStorage.setItem("field",b )
+    console.log('kiem tra b====', b)
+   this.router.navigate(['/search'])
   }
 }
