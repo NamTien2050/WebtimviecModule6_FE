@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {EmployerService} from "../service/employer.service";
-import {RecruitmentPost} from "../model/RecruitmentPost";
-import {Employment} from "../model/employment";
-import {TokenService} from "../service/token.service";
+import {EmployerService} from "../../service/employer.service";
+import {RecruitmentPost} from "../../model/RecruitmentPost";
+import {Employment} from "../../model/employment";
+import {TokenService} from "../../service/token.service";
 import {Router} from "@angular/router";
 import {PageEvent} from "@angular/material/paginator";
-import {FieldList} from "../model/FieldList";
+import {FieldList} from "../../model/FieldList";
 
 @Component({
   selector: 'app-search-result',
@@ -23,10 +23,11 @@ export class SearchResultComponent implements OnInit {
 
   constructor(private employerService: EmployerService,
               private tokenService: TokenService,
-              private router: Router) {
+  ) {
   }
 
   ngOnInit(): void {
+
     // this.field = this.employerService.getData();
     this.field = window.sessionStorage.getItem("field")
     console.log('kiem tra field===', this.field)
@@ -51,6 +52,7 @@ export class SearchResultComponent implements OnInit {
   pageRecruitmentByField(nextPage: { page?: number; size?: number; }, field: any) {
     this.employerService.pageRecruitmentPostByField(nextPage, field).subscribe(data => {
       console.log('data search theo field --> ', data);
+
       // @ts-ignore
       this.recruitmentPosts = data['content']
       // @ts-ignore
@@ -67,8 +69,12 @@ export class SearchResultComponent implements OnInit {
     nextPage['size'] = event.pageSize.toString();
     // @ts-ignore
     console.log('request[size]', nextPage['size']);
-    this.pageRecruitmentByField(nextPage,this.field);
+    this.pageRecruitmentByField(nextPage, this.field);
   }
 
 
+  findByJob(a: number) {
+
+
+  }
 }

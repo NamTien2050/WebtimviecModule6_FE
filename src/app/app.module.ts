@@ -49,7 +49,7 @@ import { DetailProfileComponent } from './Employment/detail-profile/detail-profi
 import { ListUserComponent } from './Admin/list-user/list-user.component';
 import { HomeComponent } from './home/home.component';
 import { JobBoardComponent } from './RecruitmentPost/job-board/job-board.component';
-import { SearchResultComponent } from './search-result/search-result.component';
+import { SearchResultComponent } from './Search/search-result/search-result.component';
 
 @NgModule({
   declarations: [

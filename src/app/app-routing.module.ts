@@ -25,7 +25,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
 import {CheckGuard} from "./security/check.guard";
-import {SearchResultComponent} from "./search-result/search-result.component";
+import {SearchResultComponent} from "./Search/search-result/search-result.component";
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
