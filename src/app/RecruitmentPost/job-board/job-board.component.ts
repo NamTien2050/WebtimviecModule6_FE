@@ -94,7 +94,7 @@ export class JobBoardComponent implements OnInit {
     // @ts-ignore
     window.sessionStorage.setItem("field",b )
     console.log('kiem tra b====', b)
-    this.router.navigate(['/search'])
+    this.router.navigate(['/searchResults'])
   }
 
 }
