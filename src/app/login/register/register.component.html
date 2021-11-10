@@ -1,4 +1,10 @@
-
+<head>
+  <style type="text/css">
+    #demo{
+     background-color: #2f55d4;
+    }
+  </style>
+</head>
 <div class="container-fluid login-fluid clear-left clear-right">
   <div class="login-container">
     <!-- login header -->r
@@ -22,18 +28,17 @@
           <div class="col-md-6 col-sm-12 col-12 login-main-right">
             <div class="row" style="padding-top: 10px" >
               <div class="col-sm-6 col-12 pr-7">
-                <button (click)="NTV()" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
+                <button (click)="NTV()" [ngClass]="{'test': newColor}" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
                   <span>Người tìm việc</span>
                 </button>
               </div>
               <div class="col-sm-6 col-12 pl-7">
-                <button (click)="DN()" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
+                <button (click)="DN()" [ngClass]="{'test2': newColor2}" class="btn btn-secondary btn-login-facebook btnw w-100 float-left">
                   <span>Doanh nghiệp</span>
                 </button>
               </div>
-            </div>
 
-            <form class="login-form reg-form" [formGroup]="userForm"  (ngSubmit)="register()" >
+              <form class="login-form reg-form" [formGroup]="userForm"  (ngSubmit)="register()" >
               <div class="login-main-header">
                 <span id="status" style="color: red" class="alert alert-primary">{{status}}</span>
                 <h3>Đăng Ký</h3>

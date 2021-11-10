@@ -5,7 +5,9 @@
       <a href="#" class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
-      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars icn-res" aria-hidden="true"></i>
 
@@ -17,7 +19,8 @@
             <a class="nav-link" href="#">Việc Làm </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
               Công ty
             </a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown1">
@@ -54,7 +57,7 @@
           </li>
         </ul>
         <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-          <li *ngIf="!checkLogin"  class="nav-item">
+          <li *ngIf="!checkLogin" class="nav-item">
             <a class="nav-link" routerLink="register">Đăng Ký</a>
           </li>
           <li *ngIf="!checkLogin" class="nav-item">
@@ -64,15 +67,36 @@
             <a (click)="removeLogin()" class="nav-link" routerLink="login">Đăng Xuất</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              VI
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">VI</a>
             <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">English</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true">Nhà Tuyển Dụng</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" id="navbarDropdown2"
+               data-toggle="dropdown">Nhà tuyển Dụng</a>
+            <div class="collapse show" aria-labelledby="navbarDropdown2">
+              <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Hồ sơ nhà tuyển dụng</a>
+                <a class="dropdown-item" href="#">Danh sách bài đăng</a>
+                <a class="dropdown-item" href="#">Đăng tin mới</a>
+                <a class="dropdown-item" href="#">Đăng xuất</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" id="navbarDropdown3"
+               data-toggle="dropdown">Người Dùng</a>
+            <div class="collapse show" aria-labelledby="navbarDropdown3">
+              <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                <a class="dropdown-item" href="#">Cập nhập thông tin cá nhân</a>
+                <a class="dropdown-item" href="#">Thông báo</a>
+                <a class="dropdown-item" href="#">Đăng xuất</a>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

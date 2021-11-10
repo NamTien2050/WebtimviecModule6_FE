@@ -11,7 +11,7 @@
 Created by Ho Quoc Hieu
 Website: www.quochieu.com
 Mail: quochieuu@gmail.com, hieudotnet@gmail.com;
-----------------------------------*/ 
+----------------------------------*/
 
 
 /*-----------------------------------
@@ -488,7 +488,7 @@ span.req {
 	form.login-form {
 		width: 100%;
 	}
-	
+
 	.pr-7 {
 		padding-right: 14px!important;
 	}
@@ -519,11 +519,11 @@ span.req {
 }
 
 ul.tn-nav {
-	
+
 }
 
 ul.tn-nav li {
-	
+
 }
 
 ul.tn-nav li a {
@@ -679,7 +679,7 @@ ul.tnav-right {
 }
 
 .banner-content .banner-tags {
-	
+
 }
 
 .banner-content .banner-tags ul {
@@ -1251,7 +1251,7 @@ span.cate-count {
     z-index: 1;
 }
 .job-board2-wrap .owl-nav button.owl-prev {
-    
+
     margin-left: -25px;
     left: 0;
     display: block;
@@ -1432,7 +1432,7 @@ ul.footer-list li {
 ul.footer-list li a {
     color: #555;
     font-size: .9rem;
-} 
+}
 footer.copyright-wrap {
     background: #f9f9f9;
 }
@@ -1468,18 +1468,18 @@ p.copyright-content a {
 
 /* Track */
 .job-best-salary-inner::-webkit-scrollbar-track {
-  background: #fff; 
+  background: #fff;
 }
- 
+
 /* Handle */
 .job-best-salary-inner::-webkit-scrollbar-thumb {
-  background: #ccc; 
+  background: #ccc;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 .job-best-salary-inner::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .job-over-item {
@@ -1683,7 +1683,7 @@ a.readallstyle.reads2:hover {
 
 /* job detail header */
 .job-detail-wrap {
-    
+
 }
 .job-detail {
     background: #fff;
@@ -1748,7 +1748,7 @@ a.readallstyle.reads2:hover {
     padding: 4px 0;
 }
 .job-detail-header-de ul li span{
-    
+
 }
 .icn-jd {
     color: #6b6b6b;
@@ -1800,7 +1800,7 @@ p.jd-view {
     padding-left: 1.5rem;
 }
 .welfare-list ul li {
-    
+
 }
 .welfare-list ul li p {
     font-size: .9rem;
@@ -1984,8 +1984,8 @@ ul.job-add li {
 }
 
 .price-range-search {
-    width:40.5%; 
-    background-color: #f9f9f9; 
+    width:40.5%;
+    background-color: #f9f9f9;
     border: 1px solid #6e6666;
     min-width: 40%;
     display: inline-block;
@@ -1996,15 +1996,15 @@ ul.job-add li {
     font-size:16px;
 }
 .price-range-field{
-    width:20%; 
+    width:20%;
     min-width: 16%;
-    background-color:#f9f9f9; 
-    border: 1px solid #6e6666; 
-    color: black; 
-    font-family: myFont; 
-    font: normal 14px Arial, Helvetica, sans-serif; 
-    border-radius: 5px; 
-    height:26px; 
+    background-color:#f9f9f9;
+    border: 1px solid #6e6666;
+    color: black;
+    font-family: myFont;
+    font: normal 14px Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    height:26px;
     padding:5px;
 }
 .search-results-block{
@@ -2236,17 +2236,17 @@ button.sb-fprice {
 
 /* Track */
 .filter-form-item .collapse::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 .filter-form-item .collapse::-webkit-scrollbar-thumb {
-  background: #ccc; 
+  background: #ccc;
 }
 
 /* Handle on hover */
 .filter-form-item .collapse::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 a.btnf i {
     float: right;
@@ -2284,7 +2284,7 @@ a.btnf i {
     .product-inner {
         width: 49%!important;
     }
-    
+
 }
 @media screen and (max-width: 720px) {
     .product-inner {
@@ -2406,9 +2406,9 @@ h4.search-find {
     box-shadow: 5px 3px 5px #cccccc30;
 }
 
-.recuitment-body .select2.select2-container .select2-selection .select2-selection__rendered, 
-.recuitment-body input, 
-.recuitment-body textarea, 
+.recuitment-body .select2.select2-container .select2-selection .select2-selection__rendered,
+.recuitment-body input,
+.recuitment-body textarea,
 .recuitment-body select {
     height: calc(1.5em + .75rem + 2px);
     border: 1px solid #eee!important;

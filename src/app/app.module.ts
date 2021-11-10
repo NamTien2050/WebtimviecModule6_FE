@@ -48,6 +48,7 @@ import {DetailProfileComponent} from './Employment/detail-profile/detail-profile
 import {ListUserComponent} from './Admin/list-user/list-user.component';
 import {HomeComponent} from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { SearchComponent } from './search/search.component';
     ListUserComponent,
     HomeComponent,
     SearchComponent,
+    FilterPipe,
   ],
 
   imports: [

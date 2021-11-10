@@ -13,6 +13,8 @@ declare var $: any;
 export class RegisterComponent implements OnInit {
   status = 'Please fill in the form to register!';
   id_role :any;
+  newColor = false;
+  newColor2= false;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email
@@ -71,12 +73,18 @@ export class RegisterComponent implements OnInit {
   NTV(){
     this.id_role =3;
     console.log(this.id_role);
+    this.newColor = !this.newColor;
+    this.newColor2 = false;
   }
   DN(){
     this.id_role =2;
-    console.log(this.id_role)
+    console.log(this.id_role);
+    this.newColor2 = !this.newColor2;
+    this.newColor = false;
   }
 
-
+  toggleColor() {
+    this.newColor = !this.newColor;
+  }
 
 }
