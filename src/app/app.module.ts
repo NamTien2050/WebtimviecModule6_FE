@@ -50,6 +50,7 @@ import { ListUserComponent } from './Admin/list-user/list-user.component';
 import { HomeComponent } from './home/home.component';
 import { JobBoardComponent } from './RecruitmentPost/job-board/job-board.component';
 import { SearchResultComponent } from './Search/search-result/search-result.component';
+import { SearchSideBarComponent } from './search-side-bar/search-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { SearchResultComponent } from './Search/search-result/search-result.comp
     HomeComponent,
     DialogComponent,
     JobBoardComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    SearchSideBarComponent
 
   ],
   imports: [

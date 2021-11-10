@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {EmployerService} from "../../service/employer.service";
 import {RecruitmentPost} from "../../model/RecruitmentPost";
 import {Employment} from "../../model/employment";
@@ -20,16 +20,18 @@ export class SearchResultComponent implements OnInit {
   checkLogin1: any;
   fieldList: FieldList[] = [];
   field: any;
-
   constructor(private employerService: EmployerService,
               private tokenService: TokenService,
   ) {
   }
 
-  ngOnInit(): void {
 
-    // this.field = this.employerService.getData();
+  ngOnInit(): void {
     this.field = window.sessionStorage.getItem("field")
+    console.log('kiểm tra gửi data====>',this.field)
+    this.getFieldList()
+    // this.field = this.employerService.getData();
+
     console.log('kiem tra field===', this.field)
     const role = this.tokenService.getRole();
     if (role == "ROLE_USER") {
@@ -46,7 +48,16 @@ export class SearchResultComponent implements OnInit {
       this.checkLogin1 = true;
     }
     this.pageRecruitmentByField({page: 0, size: 5}, this.field)
-
+  }
+  getFieldList(){
+    this.employerService.getFieldList().subscribe(fieldList=>{
+      this.fieldList= fieldList;
+    })
+  }
+  getResult(event: any){
+    this.field = event;
+    console.log(event);
+    this.pageRecruitmentByField({page: 0, size: 5}, this.field);
   }
 
   pageRecruitmentByField(nextPage: { page?: number; size?: number; }, field: any) {
@@ -73,8 +84,4 @@ export class SearchResultComponent implements OnInit {
   }
 
 
-  findByJob(a: number) {
-
-
-  }
 }

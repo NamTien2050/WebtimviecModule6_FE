@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarSearchComponent } from './sidebar-search.component';
+import { SearchSideBarComponent } from './search-side-bar.component';
 
-describe('SidebarSearchComponent', () => {
-  let component: SidebarSearchComponent;
-  let fixture: ComponentFixture<SidebarSearchComponent>;
+describe('SearchSideBarComponent', () => {
+  let component: SearchSideBarComponent;
+  let fixture: ComponentFixture<SearchSideBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarSearchComponent ]
+      declarations: [ SearchSideBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidebarSearchComponent);
+    fixture = TestBed.createComponent(SearchSideBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

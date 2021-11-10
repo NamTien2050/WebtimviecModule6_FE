@@ -26,7 +26,7 @@ export class DetailRecruimentPostComponent implements OnInit {
 
   ngOnInit(): void {
     const role = this.tokenService.getRole();
-    console.log(role)
+    console.log("kiem tra role=====",role)
     if (role == "ROLE_USER") {
       this.status = true;
     } else {

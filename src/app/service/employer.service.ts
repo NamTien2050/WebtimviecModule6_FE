@@ -67,12 +67,19 @@ export class EmployerService {
   pageRecruitmentPostByField(nextPage: any, field: any){
     return this.http.get(this.GENERAL_API+'/getRecruitmentPostByField/'+field)
   }
-  b : any;
-  setData(b: any){
-    this.b = b;
+
+  getLocationList():Observable<any>{
+    return this.http.get<any>(this.GENERAL_API+'/getLocationList')
   }
-  getData(): number{
-    return this.b;
+  pageRecruitmentPostByLocation(nextPage: any,location:any){
+    return this.http.get(this.GENERAL_API+'/getRecruitmentPostByLocation/'+ location);
   }
+  // b : any;
+  // setData(b: any){
+  //   this.b = b;
+  // }
+  // getData(): number{
+  //   return this.b;
+  // }
 }
 
