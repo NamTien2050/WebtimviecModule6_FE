@@ -18,6 +18,7 @@ export class FormDetailComponent implements OnInit {
   status :any;
   value: any;
   value1: any;
+  value2 :any;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -33,6 +34,7 @@ export class FormDetailComponent implements OnInit {
       name : new FormControl(),
       image : new FormControl(),
       image1 : new FormControl(),
+      logo : new FormControl(),
       staffNumber : new FormControl(),
       address :new FormControl(),
       location :new FormControl(),
@@ -54,9 +56,12 @@ export class FormDetailComponent implements OnInit {
     const Employment = this.employmentForm.value;
     this.employmentForm.value.image = this.value
     this.employmentForm.value.image1 = this.value1
+    this.employmentForm.value.logo = this.value2
+    this.employmentForm.value.email = this.tokenService.getEmail();
     // @ts-ignore
     this.authService.createEmployment(Employment,id).subscribe(data => {
       this.status = "Đăng kí thành công, vui lòng chờ hệ thống xác nhận";
+      this.employmentForm.reset('');
     })
 
   }
@@ -67,6 +72,10 @@ export class FormDetailComponent implements OnInit {
   onChangeAvatar1($event:any){
     console.log('avatar --> ', $event);
     this.value1 = $event;
+  }
+  onChangeAvatar2($event:any){
+    console.log('avatar --> ', $event);
+    this.value2 = $event;
   }
 
 

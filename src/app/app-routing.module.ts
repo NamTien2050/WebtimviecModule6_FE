@@ -19,6 +19,10 @@ import {DetailProfileComponent} from "./Employment/detail-profile/detail-profile
 import {NavbarComponent} from "./navbar/navbar.component";
 import {ListUserComponent} from "./Admin/list-user/list-user.component";
 import {HomeComponent} from "./home/home.component";
+import {NotifyComponent} from "./UserProfile/notify/notify.component";
+import {DetailEmployerComponent} from "./UserProfile/detail-employer/detail-employer.component";
+import {ListPostComponent} from "./UserProfile/list-post/list-post.component";
+import {SearchResultComponent} from "./RecruitmentPost/search-result/search-result.component";
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -41,7 +45,13 @@ const routes: Routes = [
   {path:'detail-userProfile/:id',component: DetailProfileComponent},
   {path:'navbar',component :NavbarComponent},
   {path:'allUser',component : ListUserComponent},
-  {path:'home', component: HomeComponent}
+  {path:'home', component: HomeComponent},
+  {path:'notify',component : NotifyComponent},
+  {path:'detail-employment/:id',component: DetailEmployerComponent},
+  {path:'listPost/:id',component: ListPostComponent},
+  {path:'createRecruitmentPost',component : CreateRecruitmentPostComponent},
+  {path:'searchResults',component : SearchResultComponent}
+
 ];
 
 @NgModule({

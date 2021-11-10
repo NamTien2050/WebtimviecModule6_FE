@@ -3,6 +3,7 @@ const TOKEN_KEY = 'Token_Key';
 const NAME_KEY = 'Name_Key';
 const ROLE_KEY = 'Role_Key';
 const ID_KEY = 'Id_Key';
+const EMAIL_KEY = 'Email_Key';
 
 
 @Injectable({
@@ -36,6 +37,14 @@ export class TokenService {
     window.sessionStorage.removeItem(ID_KEY)
     window.sessionStorage.setItem(ID_KEY,id)
   }
+  public setEmail(email : any){
+    window.sessionStorage.removeItem(EMAIL_KEY)
+    window.sessionStorage.setItem(EMAIL_KEY,email)
+  }
+  public getEmail(){
+    return window.sessionStorage.getItem(EMAIL_KEY);
+  }
+
   public getId(){
     return window.sessionStorage.getItem(ID_KEY);
   }

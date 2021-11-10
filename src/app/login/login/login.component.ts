@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
     const AppUser = this.userForm.value;
     this.authService.login(AppUser).subscribe(data =>{
       if(data.token!=undefined){
+        console.log(data.name)
         this.tokenService.setToken(data.token);
-        this.tokenService.setName(data.username);
+        this.tokenService.setName(data.name);
         this.tokenService.setRole(data.role);
         this.tokenService.setId(data.user_id);
+        this.tokenService.setEmail(data.email)
         this.router.navigate(['home']).then(()=>{
           window.location.reload();
         })

@@ -3,6 +3,7 @@ export interface Employment {
   name : string;
   image :string;
   image1 :string;
+  logo :string;
   description :string;
   date : number;
   staffNumber : number;

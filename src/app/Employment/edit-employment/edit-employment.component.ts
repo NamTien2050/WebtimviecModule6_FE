@@ -19,6 +19,7 @@ export class EditEmploymentComponent implements OnInit {
   status :any;
   value: any;
   value1: any;
+  value2: any;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -40,6 +41,10 @@ export class EditEmploymentComponent implements OnInit {
     const id = this.tokenService.getId()
     // @ts-ignore
     this.authService.getEmploymentByUser(id).subscribe(data => {
+      console.log(data.image);
+      this.value = data.image;
+      this.value1 = data.image1;
+      this.value2 = data.logo;
       this.employmentForm = new FormGroup({
         id : new FormControl(data.id),
         name : new FormControl(data.name),
@@ -54,6 +59,7 @@ export class EditEmploymentComponent implements OnInit {
         description : new FormControl(data.description),
         facebookLink : new FormControl(data.facebookLink),
         phone : new FormControl(data.phone),
+        logo : new FormControl(data.logo),
       })
     })
 
@@ -67,11 +73,18 @@ export class EditEmploymentComponent implements OnInit {
     console.log('avatar --> ', $event);
     this.value1 = $event;
   }
+  onChangeAvatar2($event:any){
+    console.log('avatar --> ', $event);
+    this.value2 = $event;
+  }
   submit(){
     const id = this.tokenService.getId()
     const Employment = this.employmentForm.value;
     this.employmentForm.value.image = this.value
     this.employmentForm.value.image1 = this.value1
+    this.employmentForm.value.logo = this.value2
+    this.employmentForm.value.email = this.tokenService.getEmail();
+    console.log(this.tokenService.getEmail())
     // @ts-ignore
     this.authService.createEmployment(Employment,id).subscribe(data => {
       this.status = "Sửa hồ sơ thành công, vui lòng chờ hệ thống xác nhận";

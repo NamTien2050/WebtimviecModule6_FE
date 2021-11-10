@@ -9,6 +9,7 @@ import {TokenService} from "../service/token.service";
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  value :any;
   checkLogin = false;
   roleUser = false;
   roleAdmin = false;
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.value = this.tokenService.getName();
     console.log(this.tokenService.getRole())
     if (this.tokenService.getToken()) {
       this.checkLogin = true;
@@ -29,7 +31,7 @@ export class NavbarComponent implements OnInit {
     if (this.tokenService.getRole() == 'ROLE_ADMIN') {
       this.roleAdmin = true;
     }
-    if (this.tokenService.getRole() == 'ROLE_ADMIN') {
+    if (this.tokenService.getRole() == 'ROLE_EMPLOYMENT') {
       this.roleEmployment = true;
     }
 
@@ -40,6 +42,9 @@ export class NavbarComponent implements OnInit {
     this.roleAdmin = false;
     this.roleEmployment = false;
     this.checkLogin = false;
+
+    // window.sessionStorage.clear();
+    // window.location.reload();
   }
 
 

@@ -11,6 +11,7 @@ import {UserProfile} from "../../model/user-profile";
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  check = false;
   UserProfile?: UserProfile;
   User?: SignUpForm;
 
@@ -24,6 +25,10 @@ export class UserProfileComponent implements OnInit {
     const id = this.tokenService.getId()
     // @ts-ignore
     this.authService.getUserProfile(id).subscribe(data => {
+      console.log(data);
+      if(data==null){
+        this.check = true;
+      }
       this.UserProfile = data;
     })
 

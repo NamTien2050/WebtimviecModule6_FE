@@ -47,6 +47,13 @@ import { JobApplyComponent } from './Employment/job-apply/job-apply.component';
 import { DetailProfileComponent } from './Employment/detail-profile/detail-profile.component';
 import { ListUserComponent } from './Admin/list-user/list-user.component';
 import { HomeComponent } from './home/home.component';
+import { NotifyComponent } from './UserProfile/notify/notify.component';
+import { DetailEmployerComponent } from './UserProfile/detail-employer/detail-employer.component';
+import { ListPostComponent } from './UserProfile/list-post/list-post.component';
+import { JobBoardComponent } from './RecruitmentPost/job-board/job-board.component';
+import { SearchComponent } from './RecruitmentPost/search/search.component';
+import { SearchResultComponent } from './RecruitmentPost/search-result/search-result.component';
+import { SearchSideBarComponent } from './RecruitmentPost/search/search-side-bar/search-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +78,14 @@ import { HomeComponent } from './home/home.component';
     JobApplyComponent,
     DetailProfileComponent,
     ListUserComponent,
-    HomeComponent
+    HomeComponent,
+    NotifyComponent,
+    DetailEmployerComponent,
+    ListPostComponent,
+    JobBoardComponent,
+    SearchComponent,
+    SearchResultComponent,
+    SearchSideBarComponent
 
   ],
     imports: [

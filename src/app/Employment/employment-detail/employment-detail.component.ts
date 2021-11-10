@@ -14,17 +14,23 @@ export class EmploymentDetailComponent implements OnInit {
   User?: SignUpForm;
   Employment ?: Employment;
   status = false;
+  role = false;
 
   constructor(private authService: AuthService,private tokenService: TokenService) { }
 
   ngOnInit() {
+    console.log('email',this.tokenService.getEmail())
     this.getEmploymentByUser();
     this.getUserById();
+    if(this.tokenService.getRole()=='ROLE_EMPLOYMENT'){
+      this.role = true;
+    }
   }
   getEmploymentByUser(){
     const id = this.tokenService.getId();
     // @ts-ignore
     this.authService.getEmploymentByUser(id).subscribe(data => {
+      console.log(data);
       if(data.status) {
         this.Employment = data;
       }

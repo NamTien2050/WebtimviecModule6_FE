@@ -1,11 +1,11 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.css">-->
 
 <!-- partial -->
-<div class="main-panel" *ngIf="Employment">
+<div class="main-panel" *ngIf="Employment" >
   <div class="container" *ngIf="User">
 
 
@@ -26,13 +26,12 @@
 
             <div class="profile-content">
               <div class="profile-name">{{Employment.name}}</div>
-              <div class="profile-designation"> Impossible is nothing </div>
-              <p class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+              <div class="profile-designation"> Không có gì là không thể </div>
               <ul class="profile-info-list">
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-eye"></i>Timeline</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-bookmark-check"></i>Saved</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-movie"></i>Medias</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-account"></i>About</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-eye"></i>Dòng thời gian</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-bookmark-check"></i>Lưu trữ</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-movie"></i>Ảnh</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-account"></i>Thông tin</a>
 
               </ul>
             </div>
@@ -43,44 +42,33 @@
       <div class="col-md-8 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <p class="card-title font-weight-bold">About</p>
-            <a [routerLink]="['/Employment/Edit',Employment.id]"> <button type="button" class="btn btn-success"><a>Update Profile</a></button> </a>
+            <p class="card-title font-weight-bold">Thông tin</p>
+            <a [routerLink]="['/Employment/Edit',Employment.id]"> <button type="button" *ngIf="role" class="btn btn-success"><a>Cập nhập hồ sơ</a></button> </a>
+            <a [routerLink]="['/listPost',Employment.id]"> <button type="button" style="margin-left: 50px" class="btn btn-success"><a>Tin tuyển dụng</a></button> </a>
             <hr>
-            <p class="card-description">Employment Information</p>
+            <p class="card-description">Thông tin doanh nghiệp</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Name:</span><span class="about-item-detail">{{Employment.name}}</span></li>
-              <li class="about-items"><i class="mdi mdi-mail-ru icon-sm "></i><span class="about-item-name">username:</span><span class="about-item-detail">{{User.name}}</span> <a href="" class="about-item-edit">Edit</a></li>
-              <li class="about-items"><i class="mdi mdi-lock-outline icon-sm "></i><span class="about-item-name">Password:</span><span class="about-item-detail">**********</span> <a href="" class="about-item-edit">Edit</a></li>
+              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Tên công ty:</span><span class="about-item-detail">{{Employment.name}}</span></li>
+              <li class="about-items"><i class="mdi mdi-mail-ru icon-sm "></i><span class="about-item-name">Tên tài khoản:</span><span class="about-item-detail">{{User.name}}</span>
+              <li class="about-items"><i class="mdi mdi-lock-outline icon-sm "></i><span class="about-item-name">Mật khẩu:</span><span class="about-item-detail">**********</span>
               <li class="about-items"><i class="mdi mdi-format-align-left icon-sm "></i><span class="about-item-name">FaceBook</span><span class="about-item-detail">{{Employment.facebookLink}}</span> </li>
 
-              <li class="about-items"><i class="mdi mdi-trophy-variant-outline icon-sm "></i><span class="about-item-name">Badges:</span><span class="about-item-detail">
-                       <button type="button" class="btn btn-success btn-rounded btn-icon">
-                        <i class="mdi mdi-star text-white"></i>
-                      </button>
-                        <button type="button" class="btn btn-info btn-rounded btn-icon">
-                        <i class="mdi mdi-check text-white"></i>
-                      </button>
-                       <button type="button" class="btn btn-danger btn-rounded btn-icon">
-                        <i class="mdi mdi-check text-white"></i>
-                      </button>
-                      </span> </li>
-
             </ul>
-            <p class="card-description">Contact Information</p>
+            <p class="card-description">Thông tin liên hệ</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-phone icon-sm "></i><span class="about-item-name">Phone:</span><span class="about-item-detail">{{Employment.phone}}</span></li>
-              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Address:</span><span class="about-item-detail">{{Employment.address}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Location:</span><span class="about-item-detail">{{Employment.location}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-phone icon-sm "></i><span class="about-item-name">Số điện thoại:</span><span class="about-item-detail">{{Employment.phone}}</span></li>
+              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Địa chỉ:</span><span class="about-item-detail">{{Employment.address}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Khu vực:</span><span class="about-item-detail">{{Employment.location}}</span> </li>
               <li class="about-items"><i class="mdi mdi-email-outline icon-sm "></i><span class="about-item-name">Email:</span><span class="about-item-detail"><a href="">{{Employment.email}}</a></span> </li>
               <li class="about-items"><i class="mdi mdi-web icon-sm "></i><span class="about-item-name">Site:</span><span class="about-item-detail"><a href="google.com">Employment.com.vn</a></span> </li>
             </ul>
-            <p class="card-description">Basic Information</p>
+            <p class="card-description">Thông tin cơ bản</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-cake icon-sm "></i><span class="about-item-name">Found:</span><span class="about-item-detail">{{Employment.date}}</span></li>
-              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Members:</span><span class="about-item-detail">{{Employment.staffNumber}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Field:</span><span class="about-item-detail">{{Employment.field}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-cake icon-sm "></i><span class="about-item-name">Năm thành lập:</span><span class="about-item-detail">{{Employment.date}}</span></li>
+              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Số lượng nhân viên:</span><span class="about-item-detail">{{Employment.staffNumber}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Lĩnh vực:</span><span class="about-item-detail">{{Employment.field}}</span> </li>
 <!--              <li class="about-items"><i class="mdi mdi-water icon-sm "></i><span class="about-item-name">Blood Group:</span><span class="about-item-detail">AB+</span> </li>-->
-              <li class="about-items"><i class="mdi mdi-human-male-female icon-sm "></i><span class="about-item-name">Description:</span><span class="about-item-detail">{{Employment.description}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-human-male-female icon-sm "></i><span class="about-item-name">Mô tả công ty:</span><span class="about-item-detail">{{Employment.description}}</span> </li>
             </ul>
 
 
@@ -97,13 +85,12 @@
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
 
-  <?php include'includes/admin_footer.php' ?>
   <!-- partial -->
 </div>
 <!-- main-panel ends -->
 
 
-<div class="main-panel" *ngIf="status">
+<div class="main-panel" *ngIf="!Employment">
   <div class="container" >
 
 
@@ -142,7 +129,7 @@
         <div class="card">
           <div class="card-body">
             <p class="card-title font-weight-bold">About</p>
-            <button type="button" class="btn btn-success"><a>Update Profile88888888</a></button>
+            <button type="button" class="btn btn-success"><a>Update Profile</a></button>
             <hr>
             <p class="card-description">Employment Information</p>
             <ul class="about">

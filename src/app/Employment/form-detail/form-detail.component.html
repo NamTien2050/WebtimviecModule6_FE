@@ -7,18 +7,8 @@
         <form class="example-form" [formGroup]="employmentForm" (ngSubmit)="submit()">
           <div class="Test2">
             <div class="Test">
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput formControlName="email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                <input type="hidden"  formControlName="email"
                 >
-                <mat-hint>Errors appear instantly!</mat-hint>
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                  Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Email is <strong>required</strong>
-                </mat-error>
-              </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Company</mat-label>
                 <input type="text" formControlName="name" matInput [formControl]="name" [errorStateMatcher]="matcher"
@@ -44,6 +34,15 @@
                   <mat-option value="Miền nam">Miền Nam</mat-option>
                 </mat-select>
               </mat-form-field>
+              <mat-form-field  class="example-full-width" appearance="fill">
+                <mat-label>Lĩnh vực</mat-label>
+                <mat-select formControlName="field" required>
+                  <mat-option value="IT">IT</mat-option>
+                  <mat-option value="Tài chính">Tài chính</mat-option>
+                  <mat-option value="Ngân hàng">Ngân hàng</mat-option>
+                  <mat-option value="Kinh doanh">Kinh doanh</mat-option>
+                </mat-select>
+              </mat-form-field>
             </div>
             <div class="Test">
               <mat-form-field class="example-full-width" appearance="fill">
@@ -67,23 +66,17 @@
               </mat-form-field>
             </div>
             <div class="Test" style="margin-left: 130px">
-              <mat-form-field style="margin-left: 1px" class="example-full-width" appearance="fill">
-                <mat-label>Lĩnh vực</mat-label>
-                <mat-select formControlName="field" required>
-                  <mat-option value="IT">IT</mat-option>
-                  <mat-option value="Tài chính">Tài chính</mat-option>
-                  <mat-option value="Ngân hàng">Ngân hàng</mat-option>
-                  <mat-option value="Kinh doanh">Kinh doanh</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <h2>Description</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Description</h2>
               <textarea style="width:300px" formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
               <input type="hidden"  formControlName="image" value="{{value}}">
-              <h2>Avatar</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Avatar</h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
               <input type="hidden"  formControlName="image1" value="{{value1}}">
-              <h2 style="margin-top: 15px">Ảnh bìa</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Ảnh bìa</h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar1($event)"></app-upload-avatar>
+              <input type="hidden"  formControlName="logo" value="{{value2}}">
+              <h2 style="margin-top: 15px ;font-size: 14px">Logo</h2>
+              <app-upload-avatar (giveURLtoCreate)="onChangeAvatar2($event)"></app-upload-avatar>
             </div>
           </div>
           <button style="margin-left: 380px" mat-raised-button color="primary">Đăng kí</button>

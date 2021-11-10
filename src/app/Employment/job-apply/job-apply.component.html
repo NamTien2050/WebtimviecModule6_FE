@@ -40,8 +40,8 @@
             <ng-container matColumnDef="pick">
               <th mat-header-cell *matHeaderCellDef> Chọn </th>
               <td mat-cell *matCellDef="let element">
-                <button  mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-                  <mat-icon color="primary">edit</mat-icon>
+                <button (click)="pick(element.appUser.id)" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                  <mat-icon color="primary">Pick</mat-icon>
                 </button>
               </td>
             </ng-container>

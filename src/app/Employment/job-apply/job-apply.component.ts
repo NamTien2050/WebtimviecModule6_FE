@@ -30,6 +30,7 @@ export class JobApplyComponent implements OnInit {
       // @ts-ignore
       this.employerService.getUserProfileOfEmployment(paramMap.get('id')).subscribe(data=>{
         this.UserProfile = data;
+        console.log("id",data)
         // @ts-ignore
         this.dataSource = new MatTableDataSource<RecruitmentPost>(this.UserProfile);
         this.dataSource.paginator = this.paginator;
@@ -38,7 +39,18 @@ export class JobApplyComponent implements OnInit {
 
 
     })
+  }
+  pick(id : any){
+    console.log(id);
+    const id1 = window.sessionStorage.getItem("id_post");
+    // @ts-ignore
+    this.employerService.pickUserProfile(id,id1).subscribe(data => {
+      this.getUserProfile()
+      console.log(data)
+    },error => {
+      window.confirm("Ứng viên này đã được bạn chọn")
 
+    })
 
   }
 }
