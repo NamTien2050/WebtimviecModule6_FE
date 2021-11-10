@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {EmployerService} from "../../service/employer.service";
 import {TokenService} from "../../service/token.service";
 import {AuthService} from "../../service/auth.service";
+import {Employment} from "../../model/employment";
 
 @Component({
   selector: 'app-detail-recruiment-post',
@@ -11,9 +12,12 @@ import {AuthService} from "../../service/auth.service";
   styleUrls: ['./detail-recruiment-post.component.scss']
 })
 export class DetailRecruimentPostComponent implements OnInit {
-  status :any;
+  status: any;
   form: any = {};
   recruitmentPost?: RecruitmentPost;
+  employment?: Employment;
+  checkLogin: any;
+  checkLogin1 =false;
 
   constructor(private atRouter: ActivatedRoute,private  authService: AuthService,
               private employerService: EmployerService,private tokenService: TokenService
@@ -23,21 +27,46 @@ export class DetailRecruimentPostComponent implements OnInit {
   ngOnInit(): void {
     const role = this.tokenService.getRole();
     console.log(role)
-    if(role == "ROLE_USER"){
+    if (role == "ROLE_USER") {
       this.status = true;
-    }else {
+    } else {
       this.status = false;
     }
+
+    if (role ==null) {
+      this.checkLogin1 = true;
+    }
+
+    if (role == "ROLE_USER") {
+      this.checkLogin = 1;
+    } else if (role == "ROLE_EMPLOYMENT" || role == "ROLE_ADMIN") {
+      this.checkLogin = 2;
+    } else {
+      this.checkLogin = 3
+    }
+
     this.atRouter.paramMap.subscribe(ctgId => {
       const id = Number(ctgId.get('id'));
       console.log(id)
       this.authService.detailRecruitmentPost(id).subscribe(res => {
         this.recruitmentPost = res;
-        console.log(this.recruitmentPost)
-
+        const name = this.recruitmentPost.nameEmployer
+        console.log(this.recruitmentPost.nameEmployer)
+        this.employerService.getEmployerDetailBynameEmpoyment(name).subscribe((a: Employment | undefined) =>{
+          this.employment = a;
+          console.log(a)
+        })
       });
+
     });
   }
+
+
+
+
+
+
+
   Recruitment(id:number){
     const id_user = this.tokenService.getId();
     // @ts-ignore

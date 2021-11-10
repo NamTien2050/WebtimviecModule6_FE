@@ -1,0 +1,81 @@
+<div class="container-fluid search-fluid">
+  <div class="container">
+    <div class="search-wrapper" style="margin-top: -11rem;">
+
+      <ul class="nav nav-tabs search-nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item search-nav-item">
+          <a class="nav-link snav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tìm Kiếm Nâng Cao</a>
+        </li>
+        <li class="nav-item search-nav-item">
+          <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tìm Kiếm Tất Cả
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content search-tab-content" id="myTabContent">
+        <!-- content tab 1 -->
+        <div class="tab-pane stab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <form class="bn-search-form">
+            <div class="row">
+              <div class="col-md-10 col-sm-12">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="input-group s-input-group">
+                      <input #element type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,...">
+                      <span><i class="fa fa-search"></i></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <select #element2 id="computer-languages">
+                      <option value="15" selected hidden >Nhập lương mong muốn</option>
+                      <option value="5">Từ 5-10 triệu</option>
+                      <option value="10">Từ 10-15 triệu</option>
+                      <option value="15">Từ 15-20 triệu</option>
+                      <option value="20">Từ 20-25 triệu</option>
+                      <option value="25">Từ 25-30 triệu</option>
+                      <option value="30">Trên 30 triệu</option>
+                    </select>
+                    <i class="fa fa-code sfa" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-md-3">
+                    <select #element3 id="s-provinces">
+                      <option value="" selected hidden >Tất cả địa điểm</option>
+                      <option >Nam Định</option>
+                      <option >Hà Nội</option>
+                      <option >Hồ Chí Minh</option>
+                      <option>Ninh Bình</option>
+                      <option>Bắc Ninh</option>
+                      <option>Nha Trang</option>
+                    </select>
+                    <i class="fa fa-map-marker sfa" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <button (click)="dulieu(element.value,element3.value,element2.value)" type="submit" class="btn btn-primary btn-search col-sm-12">Tìm kiếm</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- (end) content tab 1 -->
+        <!-- content tab 2 -->
+        <div class="tab-pane stab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <form class="bn-search-form">
+            <div class="row">
+              <div class="col-md-10 col-sm-12">
+                <div class="input-group s-input-group w-100">
+                  <input #element4 type="text" class="form-control sinput" placeholder="Nhập tên công ty...">
+                  <span><i class="fa fa-search"></i></span>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <button (click)="dulieu1(element4.value)" type="submit" class="btn btn-primary btn-search col-sm-12">Tìm kiếm</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- (end) content tab 2 -->
+      </div>
+
+    </div>
+  </div>
+</div>

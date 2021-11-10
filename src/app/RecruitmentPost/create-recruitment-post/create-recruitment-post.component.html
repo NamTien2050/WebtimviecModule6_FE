@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row; margin: auto;
   width: 50%;">
-    <div class="col-12" style="margin-top: 20px ; margin: auto;padding-left: 160px;
+    <div class="col-12" style="padding-left: 160px ; margin: auto;
   width: 50% ; position: center">
       <mat-card style="">
         <h1>Tạo tin tuyển dụng mới:</h1>
@@ -43,7 +43,11 @@
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
             <mat-label>Hình thức làm việc:</mat-label>
-            <input matInput name="workType" [(ngModel)]="form.workType" #workType="ngModel" >
+            <mat-select name="workType" [(ngModel)]="form.workType" #workType="ngModel">
+              <mat-option *ngFor="let workType of workTypes" [value]="workType.value">
+                {{workType.viewValue}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
@@ -75,12 +79,21 @@
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
             <mat-label>Địa điểm:</mat-label>
-            <input matInput name="location" [(ngModel)]="form.location" #location="ngModel" >
+            <mat-select name="location" [(ngModel)]="form.location" #location="ngModel">
+              <mat-option *ngFor="let location of locations" [value]="location.value">
+                {{location.viewValue}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
             <mat-label>Mô tả ngắn về công việc:</mat-label>
             <textarea name="description" [(ngModel)]="form.description" #description="ngModel" matInput placeholder="Viết mô tả ngắn về công việc"></textarea>
+          </mat-form-field>
+          <br>
+          <mat-form-field style="width: 350px" appearance="outline">
+            <mat-label>Yêu cầu với công việc:</mat-label>
+            <textarea name="expectation" [(ngModel)]="form.expectation" #expectation="ngModel" matInput placeholder="Yêu cầu với ứng viên về công việc"></textarea>
           </mat-form-field>
           <br>
           <mat-error *ngIf="!check" class="alert alert-danger" style="text-align: center">{{nofi1}}</mat-error>
@@ -96,4 +109,3 @@
     </div>
   </div>
 </div>
-

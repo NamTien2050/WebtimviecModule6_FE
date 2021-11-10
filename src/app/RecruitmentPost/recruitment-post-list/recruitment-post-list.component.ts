@@ -70,4 +70,7 @@ export class RecruitmentPostListComponent implements OnInit {
       this.getRecruitmentPostList()
     })
   }
+  Post(id :any){
+    window.sessionStorage.setItem("id_post",id);
+  }
 }

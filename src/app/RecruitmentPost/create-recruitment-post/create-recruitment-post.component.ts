@@ -26,12 +26,23 @@ export class CreateRecruitmentPostComponent implements OnInit {
   ];
 
   genders: Gender[] = [
-    {value: 'Male', viewValue: 'Nam'},
-    {value: 'Female', viewValue: 'Nữ'},
-    {value: 'Both', viewValue: 'Không phân biệt'},
+    {value: 'Nam', viewValue: 'Nam'},
+    {value: 'Nữ', viewValue: 'Nữ'},
+    {value: 'Không yêu cầu', viewValue: 'Không phân biệt'},
   ]
 
+  workTypes: WorkType[]= [
+    {value:'Toàn thời gian', viewValue: 'Toàn thời gian'},
+    {value: 'Bán thời gian', viewValue: 'Bán thời gian'}
+  ]
 
+  locations: Location[]=[
+    {value:'Hà Nội', viewValue:'Hà Nội'},
+    {value:'TP.Hồ Chí Minh', viewValue:'TP.HCM'},
+    {value:'Hải Phòng', viewValue:'Hải Phòng'},
+    {value:'Đà Nẵng', viewValue:'Đà Nẵng'},
+    {value:'Cần Thơ', viewValue:'Cần Thơ'},
+  ]
   user_id: any;
 
   constructor(private employerService: EmployerService,
@@ -39,13 +50,16 @@ export class CreateRecruitmentPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user_id = this.tokenService.getId()
+    this.user_id = this.tokenService.getId();
+    console.log('idddd',this.user_id);
   }
 
   ngSubmit() {
 
     this.recruitmentPost = new RecruitmentPost(
       this.form.title,
+      this.form.nameEmployer,
+      this.form.logo,
       this.form.minSalary,
       this.form.maxSalary,
       this.form.quantity,
@@ -58,6 +72,7 @@ export class CreateRecruitmentPostComponent implements OnInit {
       this.form.field,
       this.form.location,
       this.form.description,
+      this.form.expectation,
       this.form.status = true,
       this.form.appUser={id: this.user_id},
     )
@@ -76,7 +91,8 @@ export class CreateRecruitmentPostComponent implements OnInit {
           this.form.date = '',
           this.form.field = '',
           this.form.location = '',
-          this.form.description = ''
+          this.form.description = '',
+          this.form.expectation = ''
         this.check = true;
       }
 
@@ -99,5 +115,14 @@ interface Gender {
 interface Experience {
   value: string;
   viewValue: string;
+}
+interface  WorkType {
+  value: string;
+  viewValue: string
+}
+interface Location {
+  value: string;
+  viewValue: string
+
 
 }
