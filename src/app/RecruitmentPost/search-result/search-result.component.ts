@@ -13,6 +13,7 @@ import {PageEvent} from "@angular/material/paginator";
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
+  checkValue = true;
   employer?: Employment;
   totalElements: number = 0;
   recruitmentPosts: RecruitmentPost[] = [];
@@ -25,9 +26,13 @@ export class SearchResultComponent implements OnInit {
               private tokenService: TokenService,) { }
 
   ngOnInit(): void {
-    this.field = window.sessionStorage.getItem("field")
-    console.log('kiểm tra gửi data====>',this.field)
-    this.getFieldList()
+  //  this.field = window.sessionStorage.getItem("field")
+   // console.log('kiểm tra gửi data====>',this.field)
+    this.authService.search$.subscribe(data => {
+      this.field =data;
+
+    })
+   this.getFieldList()
     // this.field = this.employerService.getData();
 
     console.log('kiem tra field===', this.field)
@@ -46,9 +51,8 @@ export class SearchResultComponent implements OnInit {
       this.checkLogin1 = true;
     }
     this.pageRecruitmentByField({page: 0, size: 5}, this.field)
-    this.authService.search$.subscribe(data => {
-      console.log(data)
-    })
+    this.field = null;
+    this.pageRecruitmentByField1({page: 0, size: 5})
   }
   getFieldList(){
     this.employerService.getFieldList().subscribe(fieldList=>{
@@ -83,5 +87,23 @@ export class SearchResultComponent implements OnInit {
     console.log('request[size]', nextPage['size']);
     this.pageRecruitmentByField(nextPage, this.field);
   }
+  pageRecruitmentByField1(nextPage: { page?: number; size?: number; },) {
+    {
+      this.authService.search$.subscribe(data => {
+        // @ts-ignore
+        if(data['totalElements']==0){
+          this.checkValue = false;
+        }
+
+        console.log("dddđ",data)
+        // @ts-ignore
+        this.recruitmentPosts = data['content']
+        // @ts-ignore
+        this.totalElements = data['totalElements']
+      })
+    }
+  }
+
+
 
 }

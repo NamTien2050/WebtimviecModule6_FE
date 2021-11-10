@@ -22,6 +22,7 @@ export class JobBoardComponent implements OnInit {
   recruitmentPost?: RecruitmentPost;
   checkLogin: any;
   checkLogin1: any;
+  checkStatus?: boolean;
   fieldList: FieldList[] =[];
 
   constructor(private employerService: EmployerService,
@@ -43,6 +44,8 @@ export class JobBoardComponent implements OnInit {
     } else {
       this.checkLogin1 = true;
     }
+
+
     this.pageRecruitmentPost({page:0, size: 5})
     this.getFieldList();
 
@@ -92,8 +95,10 @@ export class JobBoardComponent implements OnInit {
       b = this.fieldList[a]
     }
     // @ts-ignore
-    window.sessionStorage.setItem("field",b )
-    console.log('kiem tra b====', b)
+    // window.sessionStorage.setItem("field",b )
+    // console.log('kiem tra b====', b)
+   // this.employerService.setData(b);
+    this.authService.search$.next(b);
     this.router.navigate(['/searchResults'])
   }
 

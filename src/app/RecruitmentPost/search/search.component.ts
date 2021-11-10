@@ -22,10 +22,6 @@ export class SearchComponent implements OnInit {
     console.log(dl1);console.log(dl2);console.log(dl3)
     console.log(this.value)
     this.authService.test(this.value).subscribe(data => {
-      // console.log(data);
-      // window.sessionStorage.setItem('list',data);
-      // const list = window.sessionStorage.getItem('list');
-      // console.log(list);
       this.authService.search$.next(data);
       this.router.navigate(['searchResults'])
     });
@@ -35,6 +31,5 @@ export class SearchComponent implements OnInit {
     this.authService.test1(dl1).subscribe(data => {
       console.log(data);
     })
-
   }
 }

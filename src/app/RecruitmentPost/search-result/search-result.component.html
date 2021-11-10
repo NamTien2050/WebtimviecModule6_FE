@@ -99,7 +99,8 @@
       </div>
       <!--      khu vực tin tuyển dụng-->
       <div class="col-md-9 col-sm-12 col-12">
-        <h4 class="search-find">Tìm thấy {{totalElements}} bài đăng</h4>
+        <h4 *ngIf="checkValue" class="search-find">Tìm thấy {{totalElements}} bài đăng</h4>
+        <h4 *ngIf="!checkValue" class="search-find">Không tìm thấy bài đăng</h4>
         <div class="job-board-wrap">
           <div class="job-group">
             <div class="job pagi" *ngFor="let a of recruitmentPosts">
