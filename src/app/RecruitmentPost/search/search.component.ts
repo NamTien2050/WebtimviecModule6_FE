@@ -29,7 +29,8 @@ export class SearchComponent implements OnInit {
   }
   dulieu1(dl1:any){
     this.authService.test1(dl1).subscribe(data => {
-      console.log(data);
+      this.authService.search$.next(data);
+      this.router.navigate(['searchResults'])
     })
   }
 }

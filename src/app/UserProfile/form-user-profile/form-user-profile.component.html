@@ -8,7 +8,7 @@
           <div class="Test2">
             <div class="Test">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Name</mat-label>
+                <mat-label>Tên người dùng</mat-label>
                 <input type="text" formControlName="name" matInput [formControl]="name" [errorStateMatcher]="matcher"
                 >
                 <mat-hint>Errors appear instantly!</mat-hint>
@@ -20,7 +20,7 @@
                 </mat-error>
               </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Address</mat-label>
+                <mat-label>Địa chỉ</mat-label>
                 <input type="text" formControlName="address" matInput  [formControl]="address" [errorStateMatcher]="matcher">
 
               </mat-form-field>
@@ -40,12 +40,12 @@
             </div>
             <div class="Test">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Phone</mat-label>
+                <mat-label>Số điện thoại</mat-label>
                 <input type="number" formControlName="phone" matInput [formControl]="address" [errorStateMatcher]="matcher"
                 >
               </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Age</mat-label>
+                <mat-label>Tuổi</mat-label>
                 <input type="number" formControlName="age" matInput [formControl]="address" [errorStateMatcher]="matcher"
                 >
               </mat-form-field>
@@ -68,10 +68,10 @@
                   <mat-option value="Kinh doanh">Kinh doanh</mat-option>
                 </mat-select>
               </mat-form-field>
-              <h2 style="margin-top: 15px ;font-size: 14px">Description</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Miêu tả bản thân</h2>
               <textarea style="width:300px" formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
               <input type="hidden"  formControlName="image" value="{{value}}">
-              <h2 style="margin-top: 15px ;font-size: 14px">Avatar</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px"> Ảnh đại diện </h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
               <input type="hidden"  formControlName="image1" value="{{value1}}">
               <h2 style="margin-top: 15px ;font-size: 14px">Ảnh bìa</h2>

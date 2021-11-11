@@ -6,6 +6,7 @@ import {Employment} from "../../model/employment";
 import {RecruitmentPost} from "../../model/RecruitmentPost";
 import {FieldList} from "../../model/FieldList";
 import {PageEvent} from "@angular/material/paginator";
+import {Search} from "../../model/search";
 
 @Component({
   selector: 'app-search-result',
@@ -13,6 +14,7 @@ import {PageEvent} from "@angular/material/paginator";
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
+  value : Search ={}
   checkValue = true;
   employer?: Employment;
   totalElements: number = 0;
@@ -102,6 +104,42 @@ export class SearchResultComponent implements OnInit {
         this.totalElements = data['totalElements']
       })
     }
+  }
+
+  dulieu(dl1:any,dl2:any,dl3:any){
+    this.value.title = dl1;
+    this.value.location = dl2;
+    this.value.salary = Number(dl3);
+    console.log(dl1);console.log(dl2);console.log(dl3)
+    console.log(this.value)
+    this.authService.test(this.value).subscribe(data => {
+      if(data['totalElements']==0){
+        this.checkValue = false;
+      }
+
+      console.log("dddđ",data)
+      // @ts-ignore
+      this.recruitmentPosts = data['content']
+      // @ts-ignore
+      this.totalElements = data['totalElements']
+
+
+    });
+
+  }
+  dulieu1(dl1:any){
+    this.authService.test1(dl1).subscribe(data => {
+      if(data['totalElements']==0){
+        this.checkValue = false;
+      }
+
+      console.log("dddđ",data)
+      // @ts-ignore
+      this.recruitmentPosts = data['content']
+      // @ts-ignore
+      this.totalElements = data['totalElements']
+
+    })
   }
 
 

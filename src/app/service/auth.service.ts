@@ -82,8 +82,8 @@ export class AuthService {
   test(value : any): Observable<any>{
     return this.http.post<any>(API_URL + "/rest/find",value)
   }
-  test1(value : any): Observable<any>{
-    return this.http.get<any>(API_URL + "/rest/findPage/"+value)
+  test1(search: string): Observable<any>{
+    return this.http.get<any>(API_URL + "/rest/searchAdvanced?search=" + search);
   }
 
   search$ = new BehaviorSubject<string>('');

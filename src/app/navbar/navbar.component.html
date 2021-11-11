@@ -108,34 +108,32 @@
                data-toggle="dropdown">Xin chào {{value}}</a>
             <div class="collapse show" aria-labelledby="navbarDropdown2">
               <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Hồ sơ nhà tuyển dụng</a>
-                <a class="dropdown-item" href="#">Danh sách bài đăng</a>
-                <a class="dropdown-item" href="#">Đăng tin mới</a>
-                <a class="dropdown-item" href="#">Đăng xuất</a>
+                <a class="dropdown-item" routerLink="EmploymentDetail">Hồ sơ nhà tuyển dụng</a>
+                <a class="dropdown-item" routerLink="PostOfEmployment">Danh sách bài đăng</a>
+                <a class="dropdown-item" routerLink="CreatePost">Đăng tin mới</a>
+                <a class="dropdown-item" routerLink="login">Đăng xuất</a>
               </div>
             </div>
           </li>
 
           <li *ngIf="roleUser" class="nav-item dropdown">
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" id="navbarDropdown3"
-               data-toggle="dropdown">Người Dùng</a>
+               data-toggle="dropdown">Xin chào {{value}}</a>
             <div class="collapse show" aria-labelledby="navbarDropdown3">
               <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
-                <a class="dropdown-item" href="#">Cập nhập thông tin cá nhân</a>
-                <a class="dropdown-item" href="#">Thông báo</a>
-                <a class="dropdown-item" href="#">Đăng xuất</a>
+                <a class="dropdown-item" routerLink="UserProfile">Thông tin cá nhân</a>
+                <a class="dropdown-item" routerLink="notify">Thông báo</a>
+                <a class="dropdown-item" routerLink="login">Đăng xuất</a>
               </div>
             </div>
           </li>
           <li *ngIf="roleAdmin" class="nav-item dropdown">
             <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" id="navbarDropdown4"
-               data-toggle="dropdown">Admin</a>
+               data-toggle="dropdown">Xin chào {{value}}</a>
             <div class="collapse show" aria-labelledby="navbarDropdown3">
               <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Thông tin cá nhân</a>
-                <a class="dropdown-item" href="#">Cập nhập thông tin cá nhân</a>
-                <a class="dropdown-item" href="#">Thông báo</a>
+                <a class="dropdown-item" routerLink="notify">Thông báo</a>
                 <a class="dropdown-item" href="#">Đăng xuất</a>
               </div>
             </div>

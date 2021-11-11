@@ -27,12 +27,11 @@
             <div class="profile-content">
               <div class="profile-name">{{UserProfile.name}}</div>
               <div class="profile-designation">{{UserProfile.motto}}</div>
-              <p class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
               <ul class="profile-info-list">
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-eye"></i>Timeline</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-bookmark-check"></i>Saved</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-movie"></i>Medias</a>
-                <a href="" class="profile-info-list-item"><i class="mdi mdi-account"></i>About</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-eye"></i>Dòng thời gian</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-bookmark-check"></i>Lưu trữ</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-movie"></i>Ảnh</a>
+                <a href="" class="profile-info-list-item"><i class="mdi mdi-account"></i>Thông tin</a>
 
               </ul>
             </div>
@@ -43,40 +42,27 @@
       <div class="col-md-8 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <p class="card-title font-weight-bold">About</p>
+            <p class="card-title font-weight-bold">Thông tin</p>
             <hr>
-            <p class="card-description">User Information</p>
+            <p class="card-description">Thông tin ứng viên</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Name:</span><span class="about-item-detail">{{UserProfile.name}}</span></li>
-              <li class="about-items"><i class="mdi mdi-format-align-left icon-sm "></i><span class="about-item-name">Bio:</span><span class="about-item-detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto totam, nemo quidem delectus dolores vero porro inventore perferendis minus perspiciatis.</span> </li>
-
-              <li class="about-items"><i class="mdi mdi-trophy-variant-outline icon-sm "></i><span class="about-item-name">Badges:</span><span class="about-item-detail">
-                       <button type="button" class="btn btn-success btn-rounded btn-icon">
-                        <i class="mdi mdi-star text-white"></i>
-                      </button>
-                        <button type="button" class="btn btn-info btn-rounded btn-icon">
-                        <i class="mdi mdi-check text-white"></i>
-                      </button>
-                       <button type="button" class="btn btn-danger btn-rounded btn-icon">
-                        <i class="mdi mdi-check text-white"></i>
-                      </button>
-                      </span> </li>
+              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Tên ứng viên:</span><span class="about-item-detail">{{UserProfile.name}}</span></li>
 
             </ul>
-            <p class="card-description">Contact Information</p>
+            <p class="card-description">Thông tin liên hệ</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-phone icon-sm "></i><span class="about-item-name">Phone:</span><span class="about-item-detail">{{UserProfile.phone}}</span></li>
-              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Address:</span><span class="about-item-detail">{{UserProfile.address}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-phone icon-sm "></i><span class="about-item-name">Số điện thoại:</span><span class="about-item-detail">{{UserProfile.phone}}</span></li>
+              <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Địa chỉ:</span><span class="about-item-detail">{{UserProfile.address}}</span> </li>
               <li class="about-items"><i class="mdi mdi-web icon-sm "></i><span class="about-item-name">Mức lương mong muốn</span><span class="about-item-detail"><a href="google.com">{{UserProfile.desiredSalary}}</a></span> </li>
             </ul>
-            <p class="card-description">Basic Information</p>
+            <p class="card-description">Thông tin cơ bản</p>
             <ul class="about">
-              <li class="about-items"><i class="mdi mdi-cake icon-sm "></i><span class="about-item-name">Birthday:</span><span class="about-item-detail">{{UserProfile.age}}</span></li>
-              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Gender:</span><span class="about-item-detail">{{UserProfile.gender}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Level:</span><span class="about-item-detail">{{UserProfile.level}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-water icon-sm "></i><span class="about-item-name">Field</span><span class="about-item-detail">{{UserProfile.field}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Description:</span><span class="about-item-detail">{{UserProfile.description}}</span> </li>
-              <li class="about-items"><i class="mdi mdi-human-male-female icon-sm "></i><span class="about-item-name">Relationship Status:</span><span class="about-item-detail">Single</span> </li>
+              <li class="about-items"><i class="mdi mdi-cake icon-sm "></i><span class="about-item-name">Ngày sinh nhật:</span><span class="about-item-detail">{{UserProfile.age}}</span></li>
+              <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name"> Gioi Tính :</span><span class="about-item-detail">{{UserProfile.gender}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Trình độ:</span><span class="about-item-detail">{{UserProfile.level}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-water icon-sm "></i><span class="about-item-name">Lĩnh vực</span><span class="about-item-detail">{{UserProfile.field}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Mô tả bản thân:</span><span class="about-item-detail">{{UserProfile.description}}</span> </li>
+              <li class="about-items"><i class="mdi mdi-human-male-female icon-sm "></i><span class="about-item-name">Tình trạng bản thân:</span><span class="about-item-detail">Độc thân vui tính</span> </li>
             </ul>
 
 

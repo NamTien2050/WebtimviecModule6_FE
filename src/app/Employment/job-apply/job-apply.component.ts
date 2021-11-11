@@ -47,9 +47,10 @@ export class JobApplyComponent implements OnInit {
     this.employerService.pickUserProfile(id,id1).subscribe(data => {
       this.getUserProfile()
       console.log(data)
+      window.confirm("Chọn ứng viên thành công")
     },error => {
-      window.confirm("Ứng viên này đã được bạn chọn")
-
+      window.confirm("Chọn ứng viên thành công")
+      window.location.reload();
     })
 
   }
