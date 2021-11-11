@@ -8,8 +8,8 @@
             <span>Danh sách tin tuyển dụng</span>
           </h2>
           <div class="job-group" >
-            <div class="job pagi" *ngFor="let a of recruitmentPosts" >
-              <div class="job-content">
+            <div  class="job pagi" *ngFor="let a of recruitmentPosts" >
+              <div (click)="idPOST(a.id)" class="job-content">
                 <div class="job-logo">
                   <a [routerLink]="['/detail-recruitmentPost',a.id]">
                     <img src="{{a.logo}}" class="job-logo-ima" alt="job-logo">
@@ -41,7 +41,8 @@
                   </div>
                 </div>
                 <div class="wrap-btn-appl">
-                  <a *ngIf="checkLogin==1" (click)="nopdon(a.id)" class="btn btn-appl">Nộp đơn ngay</a>
+                  <div *ngIf="checkLogin==1"><a   (click)="nopdon(a.id)" class="btn btn-appl">Nộp đơn ngay</a>
+                  </div>
                   <a *ngIf="checkLogin==3" [routerLink]="['/login']" class="btn btn-appl">Đăng nhập để nộp đơn</a>
                 </div>
               </div>

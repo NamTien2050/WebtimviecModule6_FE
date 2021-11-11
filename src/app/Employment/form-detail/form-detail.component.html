@@ -10,7 +10,7 @@
                 <input type="hidden"  formControlName="email"
                 >
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Company</mat-label>
+                <mat-label>Tên công ty</mat-label>
                 <input type="text" formControlName="name" matInput [formControl]="name" [errorStateMatcher]="matcher"
                 >
                 <mat-hint>Errors appear instantly!</mat-hint>
@@ -22,7 +22,7 @@
                 </mat-error>
               </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Address</mat-label>
+                <mat-label>Địa chỉ</mat-label>
                 <input type="text" formControlName="address" matInput  [formControl]="address" [errorStateMatcher]="matcher">
 
               </mat-form-field>
@@ -46,7 +46,7 @@
             </div>
             <div class="Test">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Phone</mat-label>
+                <mat-label>Số điện thoại</mat-label>
                 <input type="number" formControlName="phone" matInput [formControl]="address" [errorStateMatcher]="matcher"
                 >
               </mat-form-field>
@@ -66,10 +66,10 @@
               </mat-form-field>
             </div>
             <div class="Test" style="margin-left: 130px">
-              <h2 style="margin-top: 15px ;font-size: 14px">Description</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Mô tả bản thân</h2>
               <textarea style="width:300px" formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
               <input type="hidden"  formControlName="image" value="{{value}}">
-              <h2 style="margin-top: 15px ;font-size: 14px">Avatar</h2>
+              <h2 style="margin-top: 15px ;font-size: 14px">Ảnh đại diện</h2>
               <app-upload-avatar (giveURLtoCreate)="onChangeAvatar($event)"></app-upload-avatar>
               <input type="hidden"  formControlName="image1" value="{{value1}}">
               <h2 style="margin-top: 15px ;font-size: 14px">Ảnh bìa</h2>

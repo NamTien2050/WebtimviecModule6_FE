@@ -22,7 +22,6 @@ export class JobBoardComponent implements OnInit {
   recruitmentPost?: RecruitmentPost;
   checkLogin: any;
   checkLogin1: any;
-  checkStatus?: boolean;
   fieldList: FieldList[] =[];
 
   constructor(private employerService: EmployerService,
@@ -44,6 +43,8 @@ export class JobBoardComponent implements OnInit {
     } else {
       this.checkLogin1 = true;
     }
+
+
 
 
     this.pageRecruitmentPost({page:0, size: 5})
@@ -77,7 +78,7 @@ export class JobBoardComponent implements OnInit {
     // @ts-ignore
     this.authService.recruitment(id_user,id).subscribe(data => {
       if(data.status){
-        window.confirm("Bạn đã nộp  hồ sơ vào công ty này rồi, vui lòng chờ công ty xét tuyển")
+        window.confirm("Bạn đã nộp hồ sơ vào công ty này rồi, vui lòng ứng tuyển vào công mới")
       }else{
         window.confirm("Nộp hồ sơ thành công")
       }
@@ -100,6 +101,11 @@ export class JobBoardComponent implements OnInit {
    // this.employerService.setData(b);
     this.authService.search$.next(b);
     this.router.navigate(['/searchResults'])
+  }
+  idPOST(id:number){
+    // @ts-ignore
+    window.sessionStorage.setItem('ok',id);
+
   }
 
 }

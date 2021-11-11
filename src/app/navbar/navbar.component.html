@@ -84,7 +84,7 @@
   <div class="container cnt-tnar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <a href="#" class="nav-logo">
+      <a routerLink="home" class="nav-logo">
         <img src="assets/img/techjobs_bgb.png">
       </a>
       <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse"
@@ -123,6 +123,7 @@
               <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" routerLink="UserProfile">Thông tin cá nhân</a>
                 <a class="dropdown-item" routerLink="notify">Thông báo</a>
+                <a class="dropdown-item" routerLink="save">Hồ sơ đã lưu</a>
                 <a class="dropdown-item" routerLink="login">Đăng xuất</a>
               </div>
             </div>
@@ -132,9 +133,9 @@
                data-toggle="dropdown">Xin chào {{value}}</a>
             <div class="collapse show" aria-labelledby="navbarDropdown3">
               <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
-                <a class="dropdown-item" routerLink="notify">Thông báo</a>
-                <a class="dropdown-item" href="#">Đăng xuất</a>
+                <a class="dropdown-item" routerLink="listEmploymentUnauthenticated">Danh sách chờ duyệt</a>
+                <a class="dropdown-item"  routerLink="EmploymentAuthentication">Công ty hoạt động</a>
+                <a class="dropdown-item" routerLink="allUser">Danh sách tài khoản</a>
               </div>
             </div>
           </li>

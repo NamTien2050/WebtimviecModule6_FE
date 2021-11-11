@@ -54,6 +54,7 @@ import { JobBoardComponent } from './RecruitmentPost/job-board/job-board.compone
 import { SearchComponent } from './RecruitmentPost/search/search.component';
 import { SearchResultComponent } from './RecruitmentPost/search-result/search-result.component';
 import { SearchSideBarComponent } from './RecruitmentPost/search/search-side-bar/search-side-bar.component';
+import { SaveComponent } from './UserProfile/save/save.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { SearchSideBarComponent } from './RecruitmentPost/search/search-side-bar
     JobBoardComponent,
     SearchComponent,
     SearchResultComponent,
-    SearchSideBarComponent
+    SearchSideBarComponent,
+    SaveComponent
 
   ],
     imports: [

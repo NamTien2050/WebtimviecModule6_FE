@@ -1,6 +1,5 @@
 
-<h1 style="align-content: center">Danh sách tin tuyển dụng </h1>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 <button class="create-btn" mat-raised-button color="primary" [routerLink]="'/createRecruitmentPost'">Thêm tin tuyển dụng mới</button>
 
 <div class="container">
@@ -58,10 +57,10 @@
               <th mat-header-cell *matHeaderCellDef> Mở/Khóa bài đăng </th>
               <td mat-cell *matCellDef="let element">
                 <button *ngIf="element.status"  mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="lockPost(element.id)">
-                  <mat-icon color="primary">lock_open</mat-icon>
+                  <i class="bi bi-unlock"></i>
                 </button>
                 <button *ngIf="!element.status" mat-icon-button color="primary"  (click)="unlockPost(element.id)" aria-label="Example icon button with a home icon">
-                  <mat-icon color="warn">lock</mat-icon>
+                  <i class="bi bi-lock-fill"></i>
                 </button>
               </td>
             </ng-container>

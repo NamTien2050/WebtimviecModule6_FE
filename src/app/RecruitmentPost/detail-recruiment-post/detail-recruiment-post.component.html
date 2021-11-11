@@ -38,7 +38,8 @@
                 <div class="jd-center">
                   <a *ngIf="checkLogin==3" [routerLink]="['/login']" class="btn btn-primary btn-apply">Đăng nhập để nộp
                     đơn</a>
-                  <a *ngIf="checkLogin==1"  href="#" class="btn btn-primary btn-apply">Nộp đơn ngay</a>
+                  <a *ngIf="checkLogin==1"  (click)="nopdon(recruitmentPost.id)" class="btn btn-primary btn-apply">Nộp đơn ngay</a>
+                  <a *ngIf="checkLogin==4">Đã nộp đơn</a>
                   <!--              <p class="jd-view">Lượt xem: <span>1.520</span></p>-->
                 </div>
               </div>

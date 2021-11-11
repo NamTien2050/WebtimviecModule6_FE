@@ -19,6 +19,8 @@ export class DetailRecruimentPostComponent implements OnInit {
   checkLogin: any;
   checkLogin1 =false;
 
+  status1 = false;
+
   constructor(private atRouter: ActivatedRoute,private  authService: AuthService,
               private employerService: EmployerService,private tokenService: TokenService
   ) {
@@ -26,18 +28,22 @@ export class DetailRecruimentPostComponent implements OnInit {
 
   ngOnInit(): void {
     const role = this.tokenService.getRole();
+    const id_post = window.sessionStorage.getItem("ok")
+    // @ts-ignore
+    this.Recruitment(id_post);
     console.log(role)
     if (role == "ROLE_USER") {
       this.status = true;
     } else {
       this.status = false;
     }
-
     if (role ==null) {
       this.checkLogin1 = true;
     }
-
-    if (role == "ROLE_USER") {
+    console.log(this.status1);
+    if(role =="ROLE_USER" && (this.status1)){
+      this.checkLogin = 4;
+    } else if (role == "ROLE_USER") {
       this.checkLogin = 1;
     } else if (role == "ROLE_EMPLOYMENT" || role == "ROLE_ADMIN") {
       this.checkLogin = 2;
@@ -68,6 +74,16 @@ export class DetailRecruimentPostComponent implements OnInit {
 
 
   Recruitment(id:number){
+    const id_user = this.tokenService.getId();
+    // @ts-ignore
+    this.authService.recruitment(id_user,id).subscribe(data => {
+      if(data.status){
+        this.status1 = true;
+        console.log(this.status1)
+      }
+    })
+  }
+  nopdon(id:number){
     const id_user = this.tokenService.getId();
     // @ts-ignore
     this.authService.recruitment(id_user,id).subscribe(data => {

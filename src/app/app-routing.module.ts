@@ -23,6 +23,7 @@ import {NotifyComponent} from "./UserProfile/notify/notify.component";
 import {DetailEmployerComponent} from "./UserProfile/detail-employer/detail-employer.component";
 import {ListPostComponent} from "./UserProfile/list-post/list-post.component";
 import {SearchResultComponent} from "./RecruitmentPost/search-result/search-result.component";
+import {SaveComponent} from "./UserProfile/save/save.component";
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -50,7 +51,8 @@ const routes: Routes = [
   {path:'detail-employment/:id',component: DetailEmployerComponent},
   {path:'listPost/:id',component: ListPostComponent},
   {path:'createRecruitmentPost',component : CreateRecruitmentPostComponent},
-  {path:'searchResults',component : SearchResultComponent}
+  {path:'searchResults',component : SearchResultComponent},
+  {path:'save',component : SaveComponent}
 
 ];
 

@@ -13,13 +13,13 @@
 
             <!-- Name Column -->
             <ng-container matColumnDef="nameEmployment">
-              <th mat-header-cell *matHeaderCellDef> Name Employment </th>
+              <th mat-header-cell *matHeaderCellDef> Tên công ty </th>
               <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
 
             <!-- Weight Column -->
             <ng-container matColumnDef="Field">
-              <th mat-header-cell *matHeaderCellDef> Field </th>
+              <th mat-header-cell *matHeaderCellDef> Linh vực </th>
               <td mat-cell *matCellDef="let element"> {{element.field}} </td>
             </ng-container>
 
@@ -28,7 +28,7 @@
               <th mat-header-cell *matHeaderCellDef> Accept </th>
               <td mat-cell *matCellDef="let element">
                 <button (click)="Accept(element.id)" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-                  <mat-icon color="primary">edit</mat-icon>
+                  <mat-icon color="primary">Chấp nhận</mat-icon>
                 </button>
               </td>
             </ng-container>
