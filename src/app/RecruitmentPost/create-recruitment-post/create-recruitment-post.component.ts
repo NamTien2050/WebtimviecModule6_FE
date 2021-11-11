@@ -43,6 +43,23 @@ export class CreateRecruitmentPostComponent implements OnInit {
     {value:'Đà Nẵng', viewValue:'Đà Nẵng'},
     {value:'Cần Thơ', viewValue:'Cần Thơ'},
   ]
+  fields: Field[]=[
+
+    {value:'Kinh doanh', viewValue:'Kinh doanh'},
+    {value:'Bất động sản', viewValue:'Bất động sản'},
+    {value:'Bưu chính viễn thông', viewValue:'Bưu chính viễn thông'},
+    {value:'Công nghệ thông tin', viewValue:'Công nghệ thông tin'},
+    {value:'Luật/Pháp lý', viewValue:'Luật/Pháp lý'},
+    {value:'Ngân hàng/Chứng khoán/Đầu tư', viewValue:'Ngân hàng/Chứng khoán/Đầu tư'},
+    {value:'Ngoại ngữ', viewValue:'Ngoại ngữ'},
+    {value:'Nhân sự', viewValue:'Nhân sự'},
+    {value:'Quảng cáo/Marketing/PR', viewValue:'Quảng cáo/Marketing/PR'},
+    {value:'Tư vấn bảo hiểm', viewValue:'Tư vấn bảo hiểm'},
+    {value:'Xây dựng', viewValue:'Xây dựng'},
+    {value:'Xuất-Nhập khẩu/Ngoại thương', viewValue:'Xuất-Nhập khẩu/Ngoại thương'},
+    {value:'Y tế', viewValue:'Y tế'},
+  ]
+
   user_id: any;
 
   constructor(private employerService: EmployerService,
@@ -125,4 +142,8 @@ interface Location {
   viewValue: string
 
 
+}
+interface Field {
+  value:string;
+  viewValue:string;
 }

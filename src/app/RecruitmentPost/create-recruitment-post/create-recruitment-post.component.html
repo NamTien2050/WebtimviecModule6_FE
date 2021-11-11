@@ -74,7 +74,11 @@
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
             <mat-label>Lĩnh vực:</mat-label>
-            <input matInput name="field" [(ngModel)]="form.field" #field="ngModel" >
+            <mat-select name="field" [(ngModel)]="form.field" #field="ngModel">
+              <mat-option *ngFor="let field of fields" [value]="field.value">
+                {{field.viewValue}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
           <br>
           <mat-form-field style="width: 350px" appearance="outline">
